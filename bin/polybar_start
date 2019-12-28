@@ -1,0 +1,13 @@
+#!/bin/sh
+
+POLYBAR_CMD="polybar main"
+
+killall -9 polybar
+
+if type "xrandr"; then
+  for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
+    POLYBAR_MONITOR=$m $POLYBAR_CMD &
+  done
+else
+  $POLYBAR_CMD &
+fi

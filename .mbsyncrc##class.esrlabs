@@ -1,0 +1,23 @@
+IMAPAccount gmail
+Host imap.gmail.com
+User christoph.weinsheimer@esrlabs.com
+PassCmd "pass google.com/christoph.weinsheimer@googlemail.com_app_password"
+SSLType IMAPS
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+IMAPStore gmail-remote
+Account gmail
+
+MaildirStore gmail-local
+Subfolders Verbatim
+# The trailing "/" is important
+Path ~/mail/christoph.weinsheimer@esrlabs.com/
+Inbox ~/mail/christoph.weinsheimer@esrlabs.com/INBOX
+
+Channel gmail
+Master :gmail-remote:
+Slave :gmail-local:
+# Exclude everything under the internal [Gmail] folder, except the interesting folders
+Patterns * ![Gmail]* "[Gmail]/Sent Mail" "[Gmail]/Drafts"
+Create Both
+SyncState *

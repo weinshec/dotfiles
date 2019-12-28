@@ -1,0 +1,48 @@
+#============================================================
+#
+#  VARIABLES
+#
+#============================================================
+
+#------------------------------------------------------------
+# SET THE PROMPT
+#------------------------------------------------------------
+PS1="[ \[$Green\]\A \[$BCyan\]\u@\h \[\033[1;34m\]\W \[$NC\]] > "
+
+
+#------------------------------------------------------------
+# SET THE TERM VARiABLE
+#------------------------------------------------------------
+export TERM='xterm-color'
+
+if [ -e /usr/share/terminfo/x/xterm-256color ]; then
+    export TERM='xterm-256color'
+fi
+
+if [ -e $HOME/.terminfo/r/rxvt-unicode-256color ]; then
+    export TERM='rxvt-unicode-256color'
+fi
+
+
+#------------------------------------------------------------
+# SET DISPLAY VARIABLE
+#------------------------------------------------------------
+if [ -z ${DISPLAY:=""} ]; then
+    get_xserver
+    if [[ -z ${XSERVER}  || ${XSERVER} == $(hostname) ||
+       ${XSERVER} == "unix" ]]; then
+          DISPLAY=":0.0"          # Display on local host.
+    else
+       DISPLAY=${XSERVER}:0.0     # Display on remote host.
+    fi
+fi
+
+export DISPLAY
+
+
+#------------------------------------------------------------
+# SET WORKSPACE VAIRABLES
+#------------------------------------------------------------
+if [ -e ${HOME}/.workspace ]; then
+    source ${HOME}/.workspace
+fi

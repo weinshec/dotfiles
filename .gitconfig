@@ -1,0 +1,28 @@
+[push]
+  default = simple
+[diff]
+  tool = vimdiff
+[difftool]
+  prompt = false
+  trustExitCode = true
+[difftool "vimdiff"]
+  cmd = nvim -d $LOCAL $REMOTE
+[merge]
+  tool = vimdiff
+[mergetool]
+  trustExitCode = true
+[mergetool "vimdiff"]
+  cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+[alias]
+  d = difftool
+  lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)[%G?] <%an>%Creset' --abbrev-commit --all
+  files = !git diff --name-only $(git merge-base HEAD \"$REVIEW_BASE\")
+  stat = !git diff --stat $(git merge-base HEAD \"$REVIEW_BASE\")
+  review = !nvim -p $(git files) +\"tabdo Gdiff $REVIEW_BASE\" +\"let g:gitgutter_diff_base = '$REVIEW_BASE'\"
+  reviewone = !nvim -p +\"tabdo Gdiff $REVIEW_BASE\" +\"let g:gitgutter_diff_base = '$REVIEW_BASE'\"
+[core]
+  excludesfile = ~/.gitignore_global
+[commit]
+  gpgsign = true
+[include]
+  path = ~/.gitconfig_local

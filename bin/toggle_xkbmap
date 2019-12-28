@@ -1,0 +1,12 @@
+#!/bin/sh
+
+CURRENT=`setxkbmap -query | grep layout | awk '{print $2}'`
+
+if [ $CURRENT = de ]
+then
+    notify-send -a "Keyboard Layout" "Using US layout"
+    setxkbmap us
+else
+    notify-send -a "Keyboard Layout" "Using DE layout"
+    setxkbmap de
+fi

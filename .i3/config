@@ -1,0 +1,250 @@
+#
+# ~/.i3/config
+#
+# vim: set ft=conf sw=4 ts=4 sts=4 et tw=78 fdm=marker fdl=0 foldmarker={{{,}}} :
+
+
+# BASE/APPS KEYBINDINGS {{{
+
+# Use the Super ("win") key as default modifier
+set $mod Mod4
+#
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# Start a terminal
+bindsym $mod+Return exec alacritty
+bindsym $mod+Shift+Return exec alacritty -t floating-terminal
+
+# start program launcher
+bindsym $mod+Tab exec --no-startup-id "$HOME/.config/rofi/bin/appsmenu"
+bindsym $mod+p exec --no-startup-id "$HOME/.config/rofi/bin/passmenu"
+bindsym $mod+m exec --no-startup-id "papis rofi '.'"
+
+# Reload the configuration file
+bindsym $mod+Shift+c reload
+
+# Restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+
+# Exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# Brightness control
+bindsym XF86MonBrightnessDown exec xbacklight -dec 20
+bindsym XF86MonBrightnessUp   exec xbacklight -inc 20
+
+# Volume/Audio control
+bindsym XF86AudioRaiseVolume exec amixer -q set Master 2dB+ unmute
+bindsym XF86AudioLowerVolume exec amixer -q set Master 2dB- unmute
+bindsym XF86AudioMute exec amixer -q set Master toggle
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+
+# Screenlock
+bindsym Control+Mod1+l exec $HOME/bin/screenlock
+
+# Toggle keybard layout
+bindsym $mod+x exec $HOME/bin/toggle_xkbmap
+
+# Ipython shell
+bindsym $mod+i exec alacritty -t floating-terminal -e ipython
+
+# }}}
+
+# LAYOUT/WINDOWS KEYBINDINGS {{{
+
+# Kill focused window
+bindsym $mod+q kill
+
+# Move focused window to center
+bindsym $mod+Shift+x move absolute position center
+
+# Change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# Move focused window
+bindsym $mod+Shift+h move left 30px
+bindsym $mod+Shift+j move down 30px
+bindsym $mod+Shift+k move up 30px
+bindsym $mod+Shift+l move right 30px
+
+# split orientations
+bindsym $mod+b split h
+bindsym $mod+v split v
+
+# fullscreen mode for focused container
+bindsym $mod+f fullscreen
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# change focus between child and parents container
+bindsym $mod+a focus parent
+bindsym $mod+Shift+a focus child
+
+# resize window
+mode "resize" {
+    bindsym h resize shrink width 15 px or 15 ppt
+    bindsym j resize grow height 15 px or 15 ppt
+    bindsym k resize shrink height 15 px or 15 ppt
+    bindsym l resize grow width 15 px or 15 ppt
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+r mode "resize"
+
+# }}}
+
+# WORKSPACES {{{
+
+# Name the workspaces
+set $WS1   "1:BRWS"
+set $WS2   "2:CODE"
+set $WS3   "3:TERM"
+set $WS4   "4:W4"
+set $WS5   "5:W5"
+set $WS6   "6:W6"
+set $WS7   "7:SETS"
+set $WS8   "8:PLAY"
+set $WS9   "9:PERS"
+set $WS10 "10:MAIL"
+set $WS11 "11:W11"
+set $WS12 "12:W12"
+set $WS13 "13:W13"
+set $WS14 "14:W14"
+set $WS15 "15:W15"
+set $WS16 "16:W16"
+set $WS17 "17:W17"
+set $WS18 "18:W18"
+set $WS19 "19:W19"
+set $WS20 "20:W20"
+
+# switch to workspace
+bindsym $mod+1 workspace $WS1
+bindsym $mod+2 workspace $WS2
+bindsym $mod+3 workspace $WS3
+bindsym $mod+4 workspace $WS4
+bindsym $mod+5 workspace $WS5
+bindsym $mod+6 workspace $WS6
+bindsym $mod+7 workspace $WS7
+bindsym $mod+8 workspace $WS8
+bindsym $mod+9 workspace $WS9
+bindsym $mod+0 workspace $WS10
+bindsym $mod+F1 workspace $WS11
+bindsym $mod+F2 workspace $WS12
+bindsym $mod+F3 workspace $WS13
+bindsym $mod+F4 workspace $WS14
+bindsym $mod+F5 workspace $WS15
+bindsym $mod+F6 workspace $WS16
+bindsym $mod+F7 workspace $WS17
+bindsym $mod+F8 workspace $WS18
+bindsym $mod+F9 workspace $WS19
+bindsym $mod+F10 workspace $WS20
+
+# Back and forth switching policy
+workspace_auto_back_and_forth yes
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $WS1
+bindsym $mod+Shift+2 move container to workspace $WS2
+bindsym $mod+Shift+3 move container to workspace $WS3
+bindsym $mod+Shift+4 move container to workspace $WS4
+bindsym $mod+Shift+5 move container to workspace $WS5
+bindsym $mod+Shift+6 move container to workspace $WS6
+bindsym $mod+Shift+7 move container to workspace $WS7
+bindsym $mod+Shift+8 move container to workspace $WS8
+bindsym $mod+Shift+9 move container to workspace $WS9
+bindsym $mod+Shift+0 move container to workspace $WS10
+bindsym $mod+Shift+F1 move container to workspace $WS11
+bindsym $mod+Shift+F2 move container to workspace $WS12
+bindsym $mod+Shift+F3 move container to workspace $WS13
+bindsym $mod+Shift+F4 move container to workspace $WS14
+bindsym $mod+Shift+F5 move container to workspace $WS15
+bindsym $mod+Shift+F6 move container to workspace $WS16
+bindsym $mod+Shift+F7 move container to workspace $WS17
+bindsym $mod+Shift+F8 move container to workspace $WS18
+bindsym $mod+Shift+F9 move container to workspace $WS19
+bindsym $mod+Shift+F10 move container to workspace $WS20
+
+# move workspaces accross displays
+bindsym $mod+Ctrl+h move workspace to output left
+bindsym $mod+Ctrl+l move workspace to output right
+
+# }}}
+
+# WINDOWS RULES {{{
+
+for_window [class="eog|Eog"] floating enable
+for_window [title="Skype"] floating enable
+for_window [title="Press This - Mozilla Firefox" class="Firefox"] floating enable
+for_window [window_role="pop-up"] floating enable,move absolute center
+for_window [class="^ROOT$"] floating enable
+for_window [class="^feh$"] floating enable
+for_window [class="^Conky$"] floating enable
+for_window [title="^alsamixer$"] floating enable
+for_window [title="^floating-terminal$"] floating enable
+for_window [title="^pinentry$"] floating enable
+for_window [title="^pdfpc*" window_role="presentation" ] move to output right, fullscreen
+for_window [title="^pdfpc*" window_role="presenter" ] move to output left, fullscreen
+
+# }}}
+
+# STYLE {{{
+
+# Font used in i3
+font xft:Hack 10
+
+# Define colors
+set $bkg    #030105
+set $fgr    #343434
+set $pan    #225b83
+set $brd    #464646
+set $fcs    #268bd2
+set $txt    #fefefe
+set $urg    #e89393
+
+# Set colors                border     bkg         text
+client.focused              $fcs       $fcs        $txt
+client.unfocused            $fcs       $fgr        $txt
+client.focused_inactive     $bkg       $bkg        $txt
+client.urgent               $urg       $urg        $txt
+
+# border style for new windows
+hide_edge_borders both
+new_window pixel 2
+new_float  pixel 2
+
+# GAPS settings
+for_window [class="^.*"] border pixel 2
+gaps inner 10
+gaps outer 0
+smart_borders no_gaps
+smart_gaps inverse_outer
+
+# }}}
+
+# AUTOSTART {{{
+
+exec_always --no-startup-id sleep 3; polybar_start
+exec_always --no-startup-id sleep 3; fehbg
+exec_always --no-startup-id setxkbmap us
+
+exec --no-startup-id picom --config $HOME/.config/compton/compton.conf
+exec --no-startup-ip autocutsel -fork &
+exec --no-startup-ip autocutsel -selection PRIMARY -fork &
+
+# }}}

@@ -1,0 +1,33 @@
+export TIMELOG=$HOME/.esrlabs.timeclock
+
+function ti() {
+    echo i `date '+%Y-%m-%d %H:%M:%S'` $* >> $TIMELOG
+    tail -n 2 $TIMELOG
+}
+
+function to() {
+    echo o `date '+%Y-%m-%d %H:%M:%S'` >> $TIMELOG
+    tail -n 2 $TIMELOG
+}
+
+function oi() {
+    echo o `date '+%Y-%m-%d %H:%M:%S'` >> $TIMELOG
+    echo i `date '+%Y-%m-%d %H:%M:%S'` $* >> $TIMELOG
+    tail -n 3 $TIMELOG
+}
+
+function ttoday() {
+    ledger -f $TIMELOG balance --period "today"
+}
+
+function tweek() {
+    ledger -f $TIMELOG balance --period "this week"
+}
+
+function tedit() {
+    vim $TIMELOG +
+}
+
+function tshow() {
+    tail -n3 $TIMELOG
+}

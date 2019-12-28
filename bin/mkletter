@@ -1,0 +1,19 @@
+#!/usr/bin/sh
+
+if [ $# != 1 ]
+then
+    echo "Syntax:   mkletter <name>"
+    exit 1
+fi
+
+git clone https://github.com/weinshec/latex-m4letter $1
+
+rm -rf $1/.git
+rm -rf $1/README.md
+
+mv $1/example.tex $1/$1.tex
+
+sed -i "s/example/$1/g" $1/Makefile
+
+exit 0
+

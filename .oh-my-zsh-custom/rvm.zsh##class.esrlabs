@@ -1,0 +1,1 @@
+alias activateRVM='source /etc/profile.d/rvm.sh'

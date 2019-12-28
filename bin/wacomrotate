@@ -1,0 +1,11 @@
+#!/bin/sh
+device="Wacom Bamboo Connect"
+stylus="$device Pen stylus"
+pad="$device Pad pad"
+eraser="$device Pen eraser"
+
+# orientation might be none,cw,ccw,half
+
+xsetwacom --set "$stylus" Rotate half
+xsetwacom --set "$eraser" Rotate half
+# xsetwacom --set "$pad"    Rotate $1

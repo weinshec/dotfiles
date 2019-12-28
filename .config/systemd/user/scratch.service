@@ -1,0 +1,10 @@
+[Unit]
+Description=Create scratch space
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/home/weinshec/bin/scratch
+
+[Install]
+WantedBy=default.target

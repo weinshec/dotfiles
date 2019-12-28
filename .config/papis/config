@@ -1,0 +1,10 @@
+[papers]
+dir = ~/Documents/papers
+
+[documents]
+dir = ~/documents
+
+[settings]
+default-library = documents
+file-browser = ranger
+add-edit = True

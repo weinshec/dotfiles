@@ -1,0 +1,13 @@
+#!/bin/sh
+# Send terminfo to another host
+
+if [ "$#" -ne 1 ]; then
+  echo "Usage: `basename $0` <USER@HOSTNAME>" >&2
+  exit 1
+fi
+
+mkdir -p /tmp/.terminfo/r
+cp /usr/share/terminfo/r/$TERM /tmp/.terminfo/r/
+
+echo "Sending terminfo '$TERM' to $1"
+rsync -avz /tmp/.terminfo $1:~/

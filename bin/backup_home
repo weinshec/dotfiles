@@ -1,0 +1,19 @@
+#!/bin/sh
+
+# Usage: ./backup_home <destination>
+#
+#    e.g. ./backup_home /mnt/external
+#    if the the extrnal harddrive is mounted at /mnt/external
+
+
+OPTIONS="-avx --delete"
+EXCLUDE="$HOME/.backup_home.exclude"
+
+if [ -f $EXCLUDE ]; then
+  OPTIONS="$OPTIONS --exclude-from $EXCLUDE"
+fi
+
+CMD="rsync $OPTIONS $HOME $1"
+
+echo $CMD
+$CMD

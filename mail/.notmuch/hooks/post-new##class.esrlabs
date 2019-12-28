@@ -1,0 +1,30 @@
+#!/bin/sh
+
+notmuch tag -new +sent -- tag:new and from:christoph.weinsheimer@esrlabs.com
+
+notmuch tag -new +codecraft -- tag:new and from:codecraft@bmwgroup.com
+
+notmuch tag -new +gerrit -- tag:new and from:webmaster@esrlabs.com
+
+notmuch tag -new +confluence -- tag:new and from:confluence@esrlabs.atlassian.net
+
+notmuch tag -new +jira -- tag:new and from:jira@esrlabs.atlassian.net
+
+notmuch tag -new +bmwjira -- tag:new and from:ascent@bmw.de and subject:ASCENT\ Jira
+
+notmuch tag -new +timebutler -- tag:new and from:user@timebutler.de
+
+notmuch tag -new +noko -- tag:new and from:support@nokotime.com
+
+notmuch tag -new +spam -- tag:new and from:ascent.betrieb@bmw.de
+notmuch tag -new +spam -- tag:new and from:ascent@bmw.de and subject:\[confluence\]
+notmuch tag -new +spam -- tag:new and from:no_reply@bmw.de
+
+notmuch tag -new +scan -- tag:new and from:drucker@esrlabs.com
+
+notmuch tag -new +amazon -- tag:new and from:gutschein-order@gc.email.amazon.de
+notmuch tag -new +amazon -- tag:new and from:gc-orders@gc.email.amazon.de
+
+notmuch tag -new +events -- tag:new and attachment:.ics
+
+notmuch tag -new +inbox -- tag:new

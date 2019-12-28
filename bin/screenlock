@@ -1,0 +1,37 @@
+#!/bin/sh
+
+exists() {
+  type $1 > /dev/null
+}
+
+prelock() {
+  if exists "playerctl"; then
+    playerctl -a pause > /dev/null 2>&1
+  fi
+  setxkbmap us
+  pkill -u "$USER" -USR1 dunst
+}
+
+postlock() {
+  pkill -u "$USER" -USR2 dunst
+  setxkbmap us
+}
+
+lock() {
+  LOCK_CMD="i3lock -e -f -n"
+
+  if exists "import" && exists "convert"; then
+    IMG="/tmp/lock.png"
+    import -silent -window root $IMG
+    convert $IMG -scale 50% -blur 0x20 -scale 200% $IMG
+    LOCK_CMD="$LOCK_CMD -t -i $IMG"
+  else
+    LOCK_CMD="$LOCK_CMD --color=000000"
+  fi
+
+  $LOCK_CMD
+}
+
+prelock
+lock
+postlock

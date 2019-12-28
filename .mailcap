@@ -1,0 +1,9 @@
+text/html; firefox -new-tab %s & sleep 5; test=which firefox
+text/html; lynx -display_charset %{charset} -dump %s; nametemplate=%s.html; copiousoutput
+
+text/*;    less
+
+application/pdf; zathura %s
+
+image/jpeg; eog %s
+image/png; eog %s

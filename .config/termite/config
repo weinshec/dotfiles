@@ -1,0 +1,105 @@
+[options]
+
+# Scroll to the bottom when the shell generates output
+scroll_on_output = false
+
+# Scroll to the bottom automatically when a key is pressed
+scroll_on_keystroke = true
+
+# Have the terminal beep on the terminal bell
+audible_bell = false
+
+# Automatically hide the mouse pointer when you start typing
+mouse_autohide = false
+
+# Allow the output of bold characters when the bold escape sequence appears
+allow_bold = true
+
+# Allows the terminal and the shell to update the terminal's title
+dynamic_title = false
+
+# Sets the window as urgent on the terminal bell
+urgent_on_bell = true
+
+# Auto-detected URLs can be clicked on to open them in your browser.
+# Only enabled if a browser is configured or detected
+clickable_url = true
+
+# The font description for the terminal's font
+# font = SauceCodePro Nerd Font 12
+#font = Inconsolata 11
+font = Hack 11
+
+# Set the number of lines to limit the terminal's scrollback
+scrollback_lines = 10000
+
+# Search from top again when you hit the bottom
+search_wrap = true
+
+# The name of the icon to be used for the terminal process
+#icon_name = terminal
+
+# The default window geometry for new terminal windows
+geometry = 800x500
+
+# Specify the how the terminal's  cursor  should  behave.
+# "system", "on" or "off"
+cursor_blink = on
+
+# Specify how the cursor should look.
+# "block", "underline" or "ibeam"
+cursor_shape = block
+
+# Set the default browser for opening links. If its not set, $BROWSER is read.
+# If that's not set, url hints will be disabled
+#browser = xdg-open
+
+# Set size hints for the window
+#size_hints = false
+
+# Hide links that are no longer valid in url select overlay mode
+filter_unmatched_urls = true
+
+# Emit escape sequences for extra modified keys
+#modify_other_keys = false
+
+
+[colors]
+
+# special
+foreground      = #bbc2cf
+# foreground_bold = #c5c8c6
+# cursor          = #c5c8c6
+background      = #282c34
+
+# black
+color0  = #1c1f24
+color8  = #5b6268
+
+# red
+color1  = #ff6c6b
+color9  = #da8548
+
+# green
+color2  = #98be65
+color10 = #4db5bd
+
+# yellow
+color3  = #da8548
+color11 = #ecbe7b
+
+# blue
+color4  = #51afef
+color12 = #2257A0
+
+# magenta
+color5  = #c678dd
+color13 = #a9a1e1
+
+# cyan
+color6  = #5699af
+color14 = #46d9ff
+
+# white
+color7  = #a0a3a8
+color15 = #efefef

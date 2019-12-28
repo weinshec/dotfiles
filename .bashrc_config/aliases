@@ -1,0 +1,16 @@
+#============================================================
+#
+#  ALIASES
+#
+#============================================================
+
+alias du='du -kh'          # Makes a more readable output.
+alias df='df -kTh'
+
+alias ls='ls -h --color'
+alias lx='ls -lXB'         #  Sort by extension.
+alias ll="ls -lv --group-directories-first"
+alias la='ll -A'           #  Show hidden files.
+
+alias tree='tree -Csuh'    #  Nice alternative to 'recursive ls' ...
+

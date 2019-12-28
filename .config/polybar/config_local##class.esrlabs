@@ -1,0 +1,6 @@
+[local]
+
+modules = eth wlan cpu temperature battery volume xkeyboard
+
+netif_eth = eth0
+netif_wlan = wlan0

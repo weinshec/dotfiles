@@ -1,0 +1,55 @@
+# [Created by task 2.5.1 7/12/2018 09:23:45]
+# Taskwarrior program configuration file.
+# For more documentation, see http://taskwarrior.org or try 'man task', 'man task-color',
+# 'man task-sync' or 'man taskrc'
+
+# Here is an example of entries that use the default, override and blank values
+#   variable=foo   -- By specifying a value, this overrides the default
+#   variable=      -- By specifying no value, this means no default
+#   #variable=foo  -- By commenting out the line, or deleting it, this uses the default
+
+# Use the command 'task show' to see all defaults and overrides
+
+# Files
+data.location=~/.task
+
+# Color theme (uncomment one to use)
+#include /usr/share/doc/task/rc/light-16.theme
+#include /usr/share/doc/task/rc/light-256.theme
+#include /usr/share/doc/task/rc/dark-16.theme
+#include /usr/share/doc/task/rc/dark-256.theme
+#include /usr/share/doc/task/rc/dark-red-256.theme
+#include /usr/share/doc/task/rc/dark-green-256.theme
+#include /usr/share/doc/task/rc/dark-blue-256.theme
+#include /usr/share/doc/task/rc/dark-violets-256.theme
+#include /usr/share/doc/task/rc/dark-yellow-green.theme
+#include /usr/share/doc/task/rc/dark-gray-256.theme
+#include /usr/share/doc/task/rc/dark-gray-blue-256.theme
+#include /usr/share/doc/task/rc/solarized-dark-256.theme
+#include /usr/share/doc/task/rc/solarized-light-256.theme
+#include /usr/share/doc/task/rc/no-color.theme
+
+# Dateformat
+dateformat = Y-M-D
+dateformat.info = Y-M-D H:N
+dateformat.edit = Y-M-D H:N
+dateformat.report = Y-M-D H:N
+
+# GTD related settings
+report.in.columns     = id,description
+report.in.description = Inbox
+report.in.filter      = status:pending limit:page (+in)
+report.in.labels      = ID,Description
+
+report.someday.columns     = id,start.age,entry.age,tags,description
+report.someday.description = Someday/Maybe
+report.someday.filter      = status:pending (+someday)
+report.someday.labels      = ID,Active,Age,Tags,Description
+
+report.next.filter      = status:pending and -in and -BLOCKED and -someday
+
+urgency.project.coefficient  = 0
+urgency.tags.coefficient     = 0
+urgency.blocking.coefficient = 0
+
+include ~/.taskrc_local

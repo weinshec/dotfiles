@@ -1,0 +1,5 @@
+export WORKSPACE=$HOME/workspace
+
+alias bsw='cd $WORKSPACE; cd bsw; source setEnv.sh'
+alias ens='cd $WORKSPACE; cd ens2021; source setEnv.sh'
+alias bcp='cd $WORKSPACE; cd bcp2021; source setEnv.sh'
