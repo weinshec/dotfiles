@@ -1,0 +1,11 @@
+set spoolfile = "+weinshec@holodeck2.de/INBOX"
+set record    = "+weinshec@holodeck2.de/Sent"
+set postponed = "+weinshec@holodeck2.de/Drafts"
+
+set realname  = "Christoph Weinsheimer"
+set from      = "weinshec@holodeck2.de"
+unset signature
+
+set imap_user = weinshec@holodeck2.de
+set imap_pass = `pass email/weinshec@holodeck2.de`
+set smtp_url  = smtp://$imap_user:$imap_pass@mail.holodeck2.de:587

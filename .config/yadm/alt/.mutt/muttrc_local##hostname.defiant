@@ -1,0 +1,4 @@
+set query_command = "khard email --parsable %s"
+
+set pgp_self_encrypt_as      = F162145821DF211E495D0ECE362D3B2DAE51944D
+set pgp_sign_as              = F162145821DF211E495D0ECE362D3B2DAE51944D

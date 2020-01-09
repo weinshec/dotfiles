@@ -1,0 +1,11 @@
+set spoolfile = "+weinshec@students.uni-mainz.de/INBOX"
+set record    = "+weinshec@students.uni-mainz.de/Sent\ Items"
+set postponed = "+weinshec@students.uni-mainz.de/Drafts"
+
+set realname  = "Christoph Weinsheimer"
+set from      = "weinshec@students.uni-mainz.de"
+set signature = "~/.mutt/weinshec@students.uni-mainz.de.signature"
+
+set imap_user = weinshec
+set imap_pass = `pass email/weinshec@students.uni-mainz.de`
+set smtp_url  = smtp://$imap_user:$imap_pass@mail.students.uni-mainz.de:587

@@ -1,0 +1,106 @@
+# ----------------------------------------------------------------------------
+#                                                        weinshec@holodeck2.de
+IMAPAccount  holodeck2_weinshec
+Host         mail.holodeck2.de
+Port         143
+User         weinshec@holodeck2.de
+PassCmd      "pass email/weinshec@holodeck2.de"
+SSLType      STARTTLS
+
+IMAPStore holodeck2_weinshec_remote
+Account   holodeck2_weinshec
+
+MaildirStore holodeck2_weinshec_local
+Subfolders   Verbatim
+Path         ~/mail/weinshec@holodeck2.de/
+Inbox        ~/mail/weinshec@holodeck2.de/INBOX
+
+Channel    holodeck2_weinshec_all
+Master     ":holodeck2_weinshec_remote:"
+Slave      ":holodeck2_weinshec_local:"
+Patterns   *
+Expunge    Both
+SyncState  *
+
+
+# ----------------------------------------------------------------------------
+#                                                ch.weinsheimer@googlemail.com
+IMAPAccount      gmail_chweinsheimer
+Host             imap.gmail.com
+User             ch.weinsheimer@googlemail.com
+PassCmd          "pass google2oauth/defiant/ch.weinsheimer@googlemail.com"
+SSLType          IMAPS
+CertificateFile  /etc/ssl/certs/ca-certificates.crt
+
+IMAPStore    gmail_chweinsheimer_remote
+Account      gmail_chweinsheimer
+
+MaildirStore gmail_chweinsheimer_local
+Subfolders   Verbatim
+Path         ~/mail/ch.weinsheimer@googlemail.com/
+Inbox        ~/mail/ch.weinsheimer@googlemail.com/INBOX
+
+# Expunge Both
+SyncState       *
+
+Channel gmail_chweinsheimer_inbox
+Master ":gmail_chweinsheimer_remote:INBOX"
+Slave  ":gmail_chweinsheimer_local:INBOX"
+
+Channel gmail_chweinsheimer_sent
+Master ":gmail_chweinsheimer_remote:[Gmail]/Gesendet"
+Slave  ":gmail_chweinsheimer_local:Sent"
+
+Channel gmail_chweinsheimer_drafts
+Master ":gmail_chweinsheimer_remote:[Gmail]/Entw&APw-rfe"
+Slave  ":gmail_chweinsheimer_local:Drafts"
+
+Group gmail_chweinsheimer
+Channel gmail_chweinsheimer_inbox
+Channel gmail_chweinsheimer_sent
+Channel gmail_chweinsheimer_drafts
+
+
+
+##########################
+## GMAIL SHARED ACCOUNT ##
+##########################
+#IMAPAccount shared_gmail
+#Host            imap.gmail.com
+#User            christoph.simone@gmail.com
+#PassCmd         "gpg2 -q --for-your-eyes-only --no-tty -d ~/.password-store/email/christoph.simone@googlemail.com.gpg"
+#SSLType         IMAPS
+#CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+#IMAPStore shared_gmail_remote
+#Account shared_gmail
+
+#MaildirStore shared_gmail_local
+#Path ~/mail/shared_gmail/
+#Inbox ~/mail/shared_gmail/Inbox
+
+#Channel shared_gmail_inbox
+#Master ":shared_gmail_remote:INBOX"
+#Slave  ":shared_gmail_local:Inbox"
+#Create          Both
+#SyncState       *
+#Expunge         Both
+
+#Channel shared_gmail_sent
+#Master ":shared_gmail_remote:[Google Mail]/Gesendet"
+#Slave  ":shared_gmail_local:Sent"
+#Create          Both
+#SyncState       *
+#Expunge         Both
+
+#Channel shared_gmail_drafts
+#Master ":shared_gmail_remote:[Google Mail]/Entw&APw-rfe"
+#Slave  ":shared_gmail_local:Drafts"
+#Create          Both
+#SyncState       *
+#Expunge         Both
+
+#Group shared_gmail
+#Channel shared_gmail_inbox
+#Channel shared_gmail_sent
+#Channel shared_gmail_drafts

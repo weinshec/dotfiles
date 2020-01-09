@@ -1,0 +1,25 @@
+#!/bin/sh
+
+notmuch tag -new +sent -- tag:new and folder:weinshec@holodeck2.de/Sent
+notmuch tag -new       -- tag:new and folder:/weinshec@holodeck2.de/
+
+notmuch tag -new +sent       -- tag:new and folder:christoph.simone@googlemail.com/Sent
+notmuch tag -new +spam       -- tag:new and folder:christoph.simone@googlemail.com/Spam
+notmuch tag -new +geocaching -- tag:new and folder:christoph.simone@googlemail.com/INBOX and from:'/@*[.]?geocaching.com/'
+notmuch tag -new +inbox      -- tag:new and folder:christoph.simone@googlemail.com/INBOX
+
+notmuch tag -new +sent        -- tag:new and folder:ch.weinsheimer@googlemail.com/Sent
+notmuch tag -new +spam        -- tag:new and folder:ch.weinsheimer@googlemail.com/Spam
+notmuch tag -new +1und1       -- tag:new and folder:ch.weinsheimer@googlemail.com/INBOX and from:1und1.de
+notmuch tag -new +amazon      -- tag:new and folder:ch.weinsheimer@googlemail.com/INBOX and from:amazon.de
+notmuch tag -new +bahn        -- tag:new and folder:ch.weinsheimer@googlemail.com/INBOX and from:bahn.de
+notmuch tag -new +geocaching  -- tag:new and folder:ch.weinsheimer@googlemail.com/INBOX and from:'/@*[.]?geocaching.com/'
+notmuch tag -new +gitlab      -- tag:new and folder:ch.weinsheimer@googlemail.com/INBOX and from:gitlab.com
+notmuch tag -new +google      -- tag:new and folder:ch.weinsheimer@googlemail.com/INBOX and from:google.com
+notmuch tag -new +lieferheld  -- tag:new and folder:ch.weinsheimer@googlemail.com/INBOX and from:lieferheld.de
+notmuch tag -new +o2          -- tag:new and folder:ch.weinsheimer@googlemail.com/INBOX and '(from:o2.com or from:o2online.de)'
+notmuch tag -new +tmkis       -- tag:new and folder:ch.weinsheimer@googlemail.com/INBOX and '(from:tmkis.email or from:tmkis.email)'
+notmuch tag -new +inbox       -- tag:new and folder:ch.weinsheimer@googlemail.com/INBOX
+
+notmuch tag -new +sent -- tag:new and folder:catchall@holodeck2.de/Sent
+notmuch tag -new       -- tag:new and folder:/catchall@holodeck2.de/

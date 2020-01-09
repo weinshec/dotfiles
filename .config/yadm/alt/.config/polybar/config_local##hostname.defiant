@@ -1,0 +1,6 @@
+[local]
+
+modules = eth wlan cpu temperature battery volume xkeyboard
+
+netif_eth = enp0s25
+netif_wlan = wlo1

@@ -1,0 +1,17 @@
+source ~/.mutt/weinshec@holodeck2.de
+folder-hook $folder/weinshec@holodeck2.de 'source ~/.mutt/weinshec@holodeck2.de'
+account-hook $folder/weinshec@holodeck2.de "set imap_user=$imap_user imap_pass=$imap_pass"
+
+source ~/.mutt/catchall@holodeck2.de
+folder-hook $folder/catchall@holodeck2.de 'source ~/.mutt/catchall@holodeck2.de'
+account-hook $folder/catchall@holodeck2.de "set imap_user=$imap_user imap_pass=$imap_pass"
+
+source ~/.mutt/ch.weinsheimer@googlemail.com
+folder-hook $folder/ch.weinsheimer@googlemail.com 'source ~/.mutt/ch.weinsheimer@googlemail.com'
+account-hook $folder/ch.weinsheimer@googlemail.com "set imap_user=$imap_user imap_pass=$imap_pass"
+
+source ~/.mutt/christoph.simone@googlemail.com
+folder-hook $folder/christoph.simone@googlemail.com 'source ~/.mutt/christoph.simone@googlemail.com'
+account-hook $folder/christoph.simone@googlemail.com "set imap_user=$imap_user imap_pass=$imap_pass"
+
+source ~/.mutt/weinshec@holodeck2.de
