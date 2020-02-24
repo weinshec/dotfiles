@@ -3,7 +3,13 @@ text/html; lynx -display_charset %{charset} -dump %s; nametemplate=%s.html; copi
 
 text/*;    less
 
-application/pdf; zathura %s
+application/pdf; zathura %s &
 
-image/jpeg; eog %s
-image/png; eog %s
+application/vnd.openxmlformats-officedocument.presentationml.presentation; libreoffice %s &
+
+image/jpeg; qview %s &
+image/jpeg; feh %s &
+image/jpeg; eog %s &
+image/png; qview %s &
+image/png; feh %s &
+image/png; eog %s &

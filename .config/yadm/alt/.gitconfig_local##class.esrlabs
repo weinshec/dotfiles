@@ -2,3 +2,7 @@
   email = christoph.weinsheimer@esrlabs.com
   name = Christoph Weinsheimer
   signingkey = A3B12EB8107E957D38C5E7D4F4BBEF7870828597
+[credential "https://git.int.esrlabs.com"]
+    username = christoph.weinsheime
+[credential]
+    helper = cache

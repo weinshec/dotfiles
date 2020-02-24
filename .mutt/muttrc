@@ -64,7 +64,10 @@ set index_format = "%4C [%Z] %{%Y-%m-%d} |%-32.32L| %s"
 #                                                                         PAGER
 alternative_order text/plain text/html
 set pager_format = "-%Z- %C/%m  |  (%g)%*  -- (%P)"
-
+set pager_index_lines = 7
+set pager_stop
+set menu_scroll
+unset markers
 
 #______________________________________________________________________________
 #                                                                      BINDINGS
@@ -100,6 +103,8 @@ macro attach s "<save-entry><bol>~/scratch/<eol>" "Save to scratch space"
 
 macro index <f7> "<vfolder-from-query>" "vfolder from notmuch query"
 
+macro index,pager \cb "<pipe-message> urlscan<Enter>" "call urlscan to extract URLs out of a message"
+macro attach,compose \cb "<pipe-entry> urlscan<Enter>" "call urlscan to extract URLs out of a message"
 
 #______________________________________________________________________________
 #                                                                        COLORS

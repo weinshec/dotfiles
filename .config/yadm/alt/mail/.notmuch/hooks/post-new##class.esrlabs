@@ -5,6 +5,7 @@ notmuch tag -new +sent -- tag:new and from:christoph.weinsheimer@esrlabs.com
 notmuch tag -new +codecraft -- tag:new and from:codecraft@bmwgroup.com
 
 notmuch tag -new +gerrit -- tag:new and from:webmaster@esrlabs.com
+notmuch tag -new +gerrit -- tag:new and from:gerrit@esrlabs.com
 
 notmuch tag -new +confluence -- tag:new and from:confluence@esrlabs.atlassian.net
 

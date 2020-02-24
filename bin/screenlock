@@ -17,14 +17,11 @@ postlock() {
   setxkbmap us
 }
 
-lock() {
+lock_i3() {
   LOCK_CMD="i3lock -e -f -n"
 
-  if exists "import" && exists "convert"; then
-    IMG="/tmp/lock.png"
-    import -silent -window root $IMG
-    convert $IMG -scale 50% -blur 0x20 -scale 200% $IMG
-    LOCK_CMD="$LOCK_CMD -t -i $IMG"
+  if [ -f $HOME/.screenlock ]; then
+    LOCK_CMD="$LOCK_CMD -t -u -i $HOME/.screenlock"
   else
     LOCK_CMD="$LOCK_CMD --color=000000"
   fi
@@ -32,6 +29,17 @@ lock() {
   $LOCK_CMD
 }
 
+lock_xsecurelock() {
+  export XSECURELOCK_SAVER=saver_mpv
+  export XSECURELOCK_IMAGE_DURATION_SECONDS=3600
+  export XSECURELOCK_LIST_VIDEOS_COMMAND="find ~/.screenlock -type f"
+  export XSECURELOCK_SINGLE_AUTH_WINDOW=1
+  export XSECURELOCK_PASSWORD_PROMPT="time_hex"
+  export XSECURELOCK_AUTH_FOREGROUND_COLOR="#268bd2"
+  export XSECURELOCK_FONT="Hack Nerd Font:style=Bold"
+  xsecurelock
+}
+
 prelock
-lock
+lock_xsecurelock
 postlock

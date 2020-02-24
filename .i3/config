@@ -13,13 +13,15 @@ set $mod Mod4
 floating_modifier $mod
 
 # Start a terminal
-bindsym $mod+Return exec alacritty
-bindsym $mod+Shift+Return exec alacritty -t floating-terminal
+bindsym $mod+Return exec --no-startup-id "alacritty"
+bindsym $mod+Shift+Return exec --no-startup-id "alacritty -t floating-terminal"
 
 # start program launcher
 bindsym $mod+Tab exec --no-startup-id "$HOME/.config/rofi/bin/appsmenu"
 bindsym $mod+p exec --no-startup-id "$HOME/.config/rofi/bin/passmenu"
+bindsym $mod+t exec --no-startup-id "$HOME/.config/rofi/bin/tmuxmenu"
 bindsym $mod+m exec --no-startup-id "papis rofi '.'"
+bindsym $mod+n exec --no-startup-id "alacritty -e ranger"
 
 # Reload the configuration file
 bindsym $mod+Shift+c reload
@@ -243,8 +245,8 @@ exec_always --no-startup-id sleep 3; polybar_start
 exec_always --no-startup-id sleep 3; fehbg
 exec_always --no-startup-id setxkbmap us
 
-exec --no-startup-id picom --config $HOME/.config/compton/compton.conf
-exec --no-startup-ip autocutsel -fork &
-exec --no-startup-ip autocutsel -selection PRIMARY -fork &
+exec --no-startup-id picom --config $HOME/.config/picom/picom.conf
+exec --no-startup-id autocutsel -fork &
+exec --no-startup-id autocutsel -selection PRIMARY -fork &
 
 # }}}

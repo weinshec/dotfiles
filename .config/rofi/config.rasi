@@ -6,5 +6,6 @@ configuration {
   disable-history:    false;
   modi:               "drun";
   display-drun:       "apps";
+  terminal:           "alacritty";
   columns: 2;
 }

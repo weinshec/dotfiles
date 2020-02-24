@@ -1,10 +1,7 @@
 [papers]
-dir = ~/Documents/papers
-
-[documents]
-dir = ~/documents
+dir = ~/papis
 
 [settings]
-default-library = documents
+default-library = papers
 file-browser = ranger
 add-edit = True

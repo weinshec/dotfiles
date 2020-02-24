@@ -1,5 +1,33 @@
 export WORKSPACE=$HOME/workspace
 
-alias bsw='cd $WORKSPACE; cd bsw; source setEnv.sh'
-alias ens='cd $WORKSPACE; cd ens2021; source setEnv.sh'
-alias bcp='cd $WORKSPACE; cd bcp2021; source setEnv.sh'
+penv() {
+    if [ $# -eq 0 ]; then
+      PROJECT=`basename ${PWD}`
+    elif [ $# -eq 1 ]; then
+      PROJECT=$1
+    else
+      echo "Syntax:  penv [name]"
+      return -1
+    fi
+
+    if [ ! -d ${WORKSPACE}/$PROJECT ]; then
+      echo "Not a project: $PROJECT"
+      return -1
+    fi
+
+    export PENV_PROJECT=$PROJECT
+    export PENV_PROJECT_ROOT=$WORKSPACE/$PROJECT
+
+    alias cdw='cd $PENV_PROJECT_ROOT'
+
+    source $HOME/.rvm/scripts/rvm
+    rvm use 2.1.9
+
+    export PATH=/opt/llvm70/bin:$PATH
+
+    if [ -f ${PENV_PROJECT_ROOT}/setEnv.sh ]; then
+      source ${PENV_PROJECT_ROOT}/setEnv.sh
+    fi
+
+    export PS1="${PENV_PROJECT}$PS1"
+}

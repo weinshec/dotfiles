@@ -1,1 +1,1 @@
-alias activateRVM='source /etc/profile.d/rvm.sh'
+alias activateRVM='source $HOME/.rvm/scripts/rvm'

@@ -7,7 +7,7 @@ taskl () {
          (substr($1,0,1) != "-") &&
          ($2 != "projects"))
       {
-        system("task project:"$1);
+        system("task list project:"$1);
       }
     }'
 }
