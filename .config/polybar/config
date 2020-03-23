@@ -182,7 +182,7 @@ label-discharging = %percentage%% (%time%)
 
 
 [module/volume]
-type = internal/alsa
+type = internal/pulseaudio
 mapped = true
 
 format-volume = <label-volume>
