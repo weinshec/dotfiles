@@ -282,4 +282,17 @@ label-urgent-underline = ${colors.alert}
 label-urgent-padding = 4
 
 
+[module/backlight]
+type = internal/backlight
+card = intel_backlight
+
+format = <label>
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground-alt}
+format-underline = ${colors.high}
+
+label = %percentage%%
+
+
+
 ; vim:ft=dosini
