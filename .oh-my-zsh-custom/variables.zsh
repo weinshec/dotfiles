@@ -6,6 +6,6 @@ else
     export EDITOR=vim
 fi
 
-export BROWSER=firefox
+export BROWSER=chromium
 
 export PANEL_FIFO="/tmp/panel-fifo"
