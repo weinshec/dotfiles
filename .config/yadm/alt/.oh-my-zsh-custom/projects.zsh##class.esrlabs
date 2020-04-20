@@ -23,8 +23,6 @@ penv() {
     source $HOME/.rvm/scripts/rvm
     rvm use 2.1.9
 
-    export PATH=/opt/llvm70/bin:$PATH
-
     if [ -f ${PENV_PROJECT_ROOT}/setEnv.sh ]; then
       source ${PENV_PROJECT_ROOT}/setEnv.sh
     fi
