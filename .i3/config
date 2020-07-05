@@ -20,6 +20,7 @@ bindsym $mod+Shift+Return exec --no-startup-id "alacritty -t floating-terminal"
 bindsym $mod+Tab exec --no-startup-id "$HOME/.config/rofi/bin/appsmenu"
 bindsym $mod+p exec --no-startup-id "$HOME/.config/rofi/bin/passmenu"
 bindsym $mod+t exec --no-startup-id "$HOME/.config/rofi/bin/tmuxmenu"
+bindsym $mod+d exec --no-startup-id "$HOME/.config/rofi/bin/displaymenu"
 bindsym $mod+m exec --no-startup-id "papis rofi '.'"
 bindsym $mod+n exec --no-startup-id "alacritty -e ranger"
 
@@ -37,9 +38,9 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 20
 bindsym XF86MonBrightnessUp   exec xbacklight -inc 20
 
 # Volume/Audio control
-bindsym XF86AudioRaiseVolume exec amixer -q set Master 2dB+ unmute
-bindsym XF86AudioLowerVolume exec amixer -q set Master 2dB- unmute
-bindsym XF86AudioMute exec amixer -q set Master toggle
+bindsym XF86AudioRaiseVolume exec pulsemixer --change-volume +5
+bindsym XF86AudioLowerVolume exec pulsemixer --change-volume -5
+bindsym XF86AudioMute exec pulsemixer --toggle-mute
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous

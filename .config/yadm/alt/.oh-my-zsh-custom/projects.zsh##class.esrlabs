@@ -21,7 +21,7 @@ penv() {
     alias cdw='cd $PENV_PROJECT_ROOT'
 
     source $HOME/.rvm/scripts/rvm
-    rvm use 2.1.9
+    rvm use 2.5.1
 
     if [ -f ${PENV_PROJECT_ROOT}/setEnv.sh ]; then
       source ${PENV_PROJECT_ROOT}/setEnv.sh
