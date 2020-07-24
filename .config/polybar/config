@@ -84,6 +84,16 @@ format-underline = ${colors.high}
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 
+[module/timetracking]
+type = custom/script
+interval = 2
+exec = echo "$(tail $TIMELOG -n 1 | cut -d' ' -f 4) ($(ledger -f $TIMELOG balance --period today | tail -n 1 | xargs))"
+
+format = <label>
+format-underline = ${colors.high}
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground-alt}
+
 
 [module/eth]
 type = internal/network

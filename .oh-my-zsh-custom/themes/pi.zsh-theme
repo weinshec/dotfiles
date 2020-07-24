@@ -1,4 +1,7 @@
-PROMPT=' ${return_status} %{$fg[blue]%}$(get_pwd)%{$reset_color%} $(git_prompt_info)${prompt_suffix}'
+PROMPT='%{$fg[blue]%}$(get_pwd)%{$reset_color%} $(git_prompt_info)
+${return_status}${prompt_suffix}'
+
+RPROMPT='${PENV_PROJECT}'
 
 local return_status="%(?:%{$fg_bold[green]%}Φ:%{$fg_bold[red]%}Φ)"
 
