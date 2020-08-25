@@ -4,4 +4,6 @@ PlayOnLinux\'s\ virtual\ drives
 .docker
 .dbus
 workspace/bcp2021/build/
+workspace/bcp2021/worktrees/
+workspace/bcp2021/artifacts/
 weinshec/.local/share/Steam

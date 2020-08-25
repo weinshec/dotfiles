@@ -24,7 +24,7 @@ message-hook '!(~g|~G) ~b"^-----BEGIN\ PGP\ (SIGNED\ )?MESSAGE"' "exec check-tra
 #______________________________________________________________________________
 #                                                                       SIDEBAR
 set sidebar_visible
-set sidebar_format        = "%B %* %?N?%N/?%?S?%S?"
+set sidebar_format        = "%D %* %?N?%N/?%?S?%S?"
 set sidebar_width         = 35
 set sidebar_divider_char  = '│'
 set sidebar_short_path
