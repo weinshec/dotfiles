@@ -3,7 +3,6 @@ set default-bg "#30303a"
 set statusbar-bg "#222222"
 set statusbar-fg "#268bd2"
 set inputbar-fg "#f2f2f2"
-set adjust-open width
 set completion-highlight-bg "#268bd2"
 set first-page-column 2
 set show-recent 0

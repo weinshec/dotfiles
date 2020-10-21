@@ -6,6 +6,7 @@
   default = simple
 [diff]
   tool = vimdiff
+	colorMoved = default
 [difftool]
   prompt = false
   trustExitCode = true
