@@ -1,0 +1,15 @@
+#!/bin/bash
+
+rofi_command="rofi -theme themes/appsmenu.rasi -p tmux"
+
+list_sessions() {
+    session_list=`tmux list-sessions -F "#S"`
+    printf '%s\n' "${session_list[@]}" | sort -n
+}
+
+attach_session() {
+    alacritty -e tmux attach -t $1
+}
+
+selected_session="$(list_sessions 2> /dev/null | $rofi_command -dmenu)"
+attach_session $selected_session

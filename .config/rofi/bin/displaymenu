@@ -1,0 +1,23 @@
+#!/bin/sh
+
+rofi_command="rofi -theme themes/appsmenu.rasi -p DISP"
+
+root=$HOME/.screenlayout
+
+list_screenlayout() {
+  cd "${root}" || exit
+  list=(*.sh)
+  printf '%s\n' "${list[@]%.sh}" | sort -n
+}
+
+set_screenlayout() {
+  source "${root}/$1.sh"
+  fehbg
+  polybar_start
+}
+
+selected_screenlayout="$(list_screenlayout 2>/dev/null | $rofi_command -dmenu)"
+
+if [[ $? == "0" ]]; then
+  set_screenlayout $selected_screenlayout
+fi
