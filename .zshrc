@@ -29,6 +29,7 @@ export WORKSPACE=$HOME/workspace
 export LM_LICENSE_FILE=$HOME/.licenses/zwrsLicense.lic
 export PANEL_FIFO="/tmp/panel-fifo"
 export TIMELOG=$HOME/.esrlabs.timeclock
+export MANPAGER='nvim +Man!'
 
 if [ -f /usr/bin/nvim ]; then
     export EDITOR=nvim
@@ -43,9 +44,9 @@ if ! type exa > /dev/null; then
   alias ll='ls -lhH --group-directories-first'
   alias la='ls -lAhH --group-directories-first'
 else
-  alias ll='exa -l --group-directories-first --git'
-  alias la='exa -la --group-directories-first --git'
-  alias tree='exa --tree -l --git'
+  alias ll='exa -l --group-directories-first'
+  alias la='exa -la --group-directories-first'
+  alias tree='exa --tree -l'
 fi
 
 alias cds='cd ~/scratch'
