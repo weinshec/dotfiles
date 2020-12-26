@@ -1,6 +1,6 @@
 #!/bin/bash
 
-rofi_command="rofi -theme themes/passmenu.rasi -p pass"
+rofi_command="rofi -p pass"
 
 root=$HOME/.password-store
 

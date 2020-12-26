@@ -1,6 +1,6 @@
 #!/bin/sh
 
-rofi_command="rofi -theme themes/appsmenu.rasi -p DISP"
+rofi_command="rofi -p DISP"
 
 root=$HOME/.screenlayout
 

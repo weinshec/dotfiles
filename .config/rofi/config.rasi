@@ -1,11 +1,14 @@
 configuration {
-  show-icons:         true;
-//  icon-theme:         "Paper";
-  cycle:              true;
-  hide-scrollbar:     true;
-  disable-history:    false;
-  modi:               "drun";
-  display-drun:       "apps";
-  terminal:           "alacritty";
-  columns: 2;
+    modi:               "drun,window,run,combi";
+    cycle:              true;
+    show-icons:         true;
+    matching:           "fuzzy";
+    lines:              8;
+    columns:            1;
+    width:              800;
+    location:           0;
+    padding:            50;
+    font:               "Hack 12";
+    hide-scrollbar:     true;
+    theme:              "javacafe";
 }
