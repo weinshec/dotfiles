@@ -21,7 +21,7 @@ bindsym $mod+Tab exec --no-startup-id "$HOME/.config/rofi/bin/appsmenu"
 bindsym $mod+p exec --no-startup-id "$HOME/.config/rofi/bin/passmenu"
 bindsym $mod+t exec --no-startup-id "$HOME/.config/rofi/bin/tmuxmenu"
 bindsym $mod+d exec --no-startup-id "$HOME/.config/rofi/bin/displaymenu"
-bindsym $mod+m exec --no-startup-id "papis rofi '.'"
+bindsym $mod+m exec --no-startup-id "$HOME/.config/rofi/bin/papermenu"
 bindsym $mod+n exec --no-startup-id "alacritty -e ranger"
 
 # Reload the configuration file
