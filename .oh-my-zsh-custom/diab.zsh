@@ -1,1 +1,0 @@
-../.config/yadm/alt/.oh-my-zsh-custom/diab.zsh##class.esrlabs
