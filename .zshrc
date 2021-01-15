@@ -106,6 +106,8 @@ penv() {
     export PENV_PROJECT=$PROJECT
     export PENV_PROJECT_ROOT=$WORKSPACE/projects/$PROJECT
 
+    export PATH=/opt/llvm100/bin:$PATH
+
     alias cdw='cd $PENV_PROJECT_ROOT'
 
     source $HOME/.rvm/scripts/rvm

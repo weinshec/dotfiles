@@ -1,6 +1,6 @@
 #!/bin/sh
 
-rofi_command="rofi -p MANUALS -dmenu"
+rofi_command="rofi -p MANUALS -dmenu -i"
 
 root=$HOME/library/manuals
 

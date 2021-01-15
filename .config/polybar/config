@@ -223,7 +223,8 @@ label-layout-underline = ${colors.high}
 type = internal/date
 interval = 1
 
-date = %d-%b-%Y
+; date = %d-%b-%Y
+date = %Y-%m-%d
 time = %H:%M:%S
 
 ; format-prefix = "TS "

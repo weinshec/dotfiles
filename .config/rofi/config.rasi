@@ -2,7 +2,7 @@ configuration {
     modi:               "drun,window,run,combi";
     cycle:              true;
     show-icons:         true;
-    matching:           "fuzzy";
+    matching:           "glob";
     lines:              8;
     columns:            1;
     width:              800;
