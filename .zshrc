@@ -51,6 +51,7 @@ fi
 
 alias cds='cd ~/scratch'
 alias cdw='cd ~/workspace'
+alias cdp='cd ~/workspace/projects'
 alias cat='bat'
 alias vim='nvim'
 

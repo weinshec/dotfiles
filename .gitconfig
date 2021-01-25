@@ -26,7 +26,7 @@
   cc = commit
   ca = commit --amend
   d = difftool
-  lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)[%G?] <%an>%Creset' --abbrev-commit --all
+  lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)[%G?] <%an>%Creset' --abbrev-commit
   s = status
   ; files = !git diff --name-only $(git merge-base HEAD \"$REVIEW_BASE\")
   stat = diff --stat
