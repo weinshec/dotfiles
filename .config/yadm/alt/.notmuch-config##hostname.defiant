@@ -12,7 +12,7 @@
 #
 
 [database]
-path=/home/weinshec/mail
+path=mail
 
 # User configuration
 #

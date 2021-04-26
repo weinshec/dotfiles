@@ -16,8 +16,8 @@ Path         ~/mail/weinshec@holodeck2.de/
 Inbox        ~/mail/weinshec@holodeck2.de/INBOX
 
 Channel    holodeck2_weinshec_all
-Master     ":holodeck2_weinshec_remote:"
-Slave      ":holodeck2_weinshec_local:"
+Far        ":holodeck2_weinshec_remote:"
+Near       ":holodeck2_weinshec_local:"
 Patterns   *
 Expunge    Both
 SyncState  *
@@ -40,20 +40,20 @@ Subfolders   Verbatim
 Path         ~/mail/ch.weinsheimer@googlemail.com/
 Inbox        ~/mail/ch.weinsheimer@googlemail.com/INBOX
 
-# Expunge Both
-SyncState       *
+Channel   gmail_chweinsheimer_inbox
+Far       ":gmail_chweinsheimer_remote:INBOX"
+Near      ":gmail_chweinsheimer_local:INBOX"
+SyncState *
 
-Channel gmail_chweinsheimer_inbox
-Master ":gmail_chweinsheimer_remote:INBOX"
-Slave  ":gmail_chweinsheimer_local:INBOX"
+Channel   gmail_chweinsheimer_sent
+Far       ":gmail_chweinsheimer_remote:[Gmail]/Gesendet"
+Near      ":gmail_chweinsheimer_local:Sent"
+SyncState *
 
-Channel gmail_chweinsheimer_sent
-Master ":gmail_chweinsheimer_remote:[Gmail]/Gesendet"
-Slave  ":gmail_chweinsheimer_local:Sent"
-
-Channel gmail_chweinsheimer_drafts
-Master ":gmail_chweinsheimer_remote:[Gmail]/Entw&APw-rfe"
-Slave  ":gmail_chweinsheimer_local:Drafts"
+Channel   gmail_chweinsheimer_drafts
+Far       ":gmail_chweinsheimer_remote:[Gmail]/Entw&APw-rfe"
+Near      ":gmail_chweinsheimer_local:Drafts"
+SyncState *
 
 Group gmail_chweinsheimer
 Channel gmail_chweinsheimer_inbox
@@ -80,22 +80,22 @@ Channel gmail_chweinsheimer_drafts
 #Inbox ~/mail/shared_gmail/Inbox
 
 #Channel shared_gmail_inbox
-#Master ":shared_gmail_remote:INBOX"
-#Slave  ":shared_gmail_local:Inbox"
+#Far    ":shared_gmail_remote:INBOX"
+#Near   ":shared_gmail_local:Inbox"
 #Create          Both
 #SyncState       *
 #Expunge         Both
 
 #Channel shared_gmail_sent
-#Master ":shared_gmail_remote:[Google Mail]/Gesendet"
-#Slave  ":shared_gmail_local:Sent"
+#Far    ":shared_gmail_remote:[Google Mail]/Gesendet"
+#Near   ":shared_gmail_local:Sent"
 #Create          Both
 #SyncState       *
 #Expunge         Both
 
 #Channel shared_gmail_drafts
-#Master ":shared_gmail_remote:[Google Mail]/Entw&APw-rfe"
-#Slave  ":shared_gmail_local:Drafts"
+#Far    ":shared_gmail_remote:[Google Mail]/Entw&APw-rfe"
+#Near   ":shared_gmail_local:Drafts"
 #Create          Both
 #SyncState       *
 #Expunge         Both
