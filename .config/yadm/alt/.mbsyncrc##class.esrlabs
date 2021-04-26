@@ -15,8 +15,8 @@ Path ~/mail/christoph.weinsheimer@esrlabs.com/
 Inbox ~/mail/christoph.weinsheimer@esrlabs.com/INBOX
 
 Channel gmail
-Master :gmail-remote:
-Slave :gmail-local:
+Far :gmail-remote:
+Near :gmail-local:
 # Exclude everything under the internal [Gmail] folder, except the interesting folders
 Patterns * ![Gmail]* "[Gmail]/Sent Mail" "[Gmail]/Drafts"
 Create Both

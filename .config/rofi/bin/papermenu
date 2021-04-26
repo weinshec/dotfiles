@@ -6,6 +6,7 @@ root=$HOME/library/manuals
 
 find_pdfs() {
   cd "${root}" || exit
+  shopt -s globstar
   list=(**/*.pdf)
   printf '%s\n' "${list[@]%}" | sort -n
 }
