@@ -12,7 +12,7 @@
 #
 
 [database]
-path=mail
+path=/home/pweinshec/mail
 
 # User configuration
 #
@@ -33,7 +33,7 @@ path=mail
 [user]
 name=Christoph Weinsheimer
 primary_email=weinshec@holodeck2.de
-other_email=ch.weinsheimer@googlemail.com;ch.weinsheimer@gmail.com;christoph.simone@googlemail.com;christoph.simone@gmail.com
+other_email=ch.weinsheimer@googlemail.com;ch.weinsheimer@gmail.com;christoph.simone@googlemail.com;christoph.simone@gmail.com;
 
 # Configuration for "notmuch new"
 #
