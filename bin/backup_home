@@ -7,7 +7,7 @@
 
 
 OPTIONS="-avx --delete"
-EXCLUDE="$HOME/.backup_home.exclude"
+EXCLUDE="$HOME/bin/.backup_home.exclude"
 
 if [ -f $EXCLUDE ]; then
   OPTIONS="$OPTIONS --exclude-from $EXCLUDE"

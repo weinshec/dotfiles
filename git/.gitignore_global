@@ -1,0 +1,12 @@
+Session.vim
+.cquery
+.clang-format
+.clang-tidy
+compile_commands.json
+tags
+.bake
+build
+.gdb_history
+.pyenv
+.cache
+__pycache__

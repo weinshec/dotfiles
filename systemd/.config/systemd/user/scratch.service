@@ -1,0 +1,10 @@
+[Unit]
+Description=Create scratch space
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/bin/sh -c 'mktemp -d | xargs -I{} ln -sf {} ~/scratch'
+
+[Install]
+WantedBy=default.target

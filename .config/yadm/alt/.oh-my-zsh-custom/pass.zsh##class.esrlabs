@@ -1,1 +1,0 @@
- alias ppass="PASSWORD_STORE_DIR=~/.password-store-private pass"

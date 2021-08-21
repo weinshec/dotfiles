@@ -1,0 +1,6 @@
+[user]
+  email = weinshec@holodeck2.de
+  name = Christoph Weinsheimer
+  signingKey = F162145821DF211E495D0ECE362D3B2DAE51944D
+[commit]
+  gpgsign = true

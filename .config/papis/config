@@ -1,7 +1,0 @@
-[papers]
-dir = ~/papis
-
-[settings]
-default-library = papers
-file-browser = ranger
-add-edit = True

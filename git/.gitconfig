@@ -1,0 +1,29 @@
+[fetch]
+  prune = true
+[pull]
+  ff = only
+[push]
+  default = simple
+[diff]
+  tool = vimdiff
+  colorMoved = default
+[difftool]
+  prompt = false
+  trustExitCode = true
+[difftool "vimdiff"]
+  cmd = nvim -d $LOCAL $REMOTE
+[alias]
+  b = branch
+  br = branch --remote
+  co = checkout
+  cc = commit
+  ca = commit --amend
+  d = difftool
+  lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)[%G?] <%an>%Creset' --abbrev-commit
+  s = status
+[gui]
+  encoding = UTF-8
+[core]
+  excludesfile = ~/.gitignore
+[include]
+  path = ~/.gitconfig_local

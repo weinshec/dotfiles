@@ -1,0 +1,14 @@
+# Local configuration
+
+# UDAs
+uda.ticket.type=string
+uda.ticket.label=Ticket
+
+report.list.columns = id,entry.age,depends.list,priority,project,tags,recur.indicator,scheduled.countdown,due,until.remaining,description.count,urgency,ticket
+report.list.labels  = ID,Age,D,P,Project,Tags,R,Sch,Due,Until,Description,Urg,Ticket
+report.list.sort    = project+,due-,urgency+
+
+# Customize urgencies
+urgency.annotations.coefficient = 0
+urgency.project.coefficient     = 0
+urgency.tags.coefficient        = 0

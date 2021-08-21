@@ -1,0 +1,22 @@
+- defaults:
+    link:
+      relink: true
+      create: true
+
+- clean: ['~']
+
+- link:
+    ~/.mutt/muttrc: mail/.mutt/muttrc
+    ~/.mutt/colors: mail/.mutt/colors
+
+    ~/.mailcap: mail/.mailcap
+    ~/.muttprintrc: mail/.muttprintrc
+
+    ~/.config/systemd/user/mbsync.service: systemd/.config/systemd/user/mbsync.service
+    ~/.config/systemd/user/mbsync.timer: systemd/.config/systemd/user/mbsync.timer
+
+- shell:
+  - 
+    description: Enable mbsync systemd service
+    command: systemctl --user enable mbsync.timer && systemctl --user start mbsync.timer
+    stderr: true

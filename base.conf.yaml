@@ -1,0 +1,39 @@
+- defaults:
+    link:
+      relink: true
+      create: true
+
+- clean: ['~']
+
+- link:
+    ~/bin: bin
+
+    ~/.zshrc: zsh/.zshrc
+
+    ~/.bashrc: bash/.bashrc
+    ~/.bashrc_config: bash/.bashrc_config/
+
+    ~/.gitconfig: git/.gitconfig
+    ~/.gitignore: git/.gitignore_global
+
+    ~/.screenrc: screen/.screenrc
+    ~/.tmux.conf: tmux/.tmux.conf
+
+    ~/.dir_colors: dir_colors/.dir_colors
+
+    ~/.config/ranger: ranger
+
+    ~/.config/systemd/user/scratch.service: systemd/.config/systemd/user/scratch.service
+
+    ~/.config/rua: rua/.config/rua
+
+- shell:
+  - 
+    description: Install tmux plugin manager
+    command: ./tmux/install_tpm.sh
+    stderr: true
+
+  - 
+    description: Enable scratch systemd service
+    command: systemctl --user enable scratch.service && systemctl --user start scratch.service
+    stderr: true

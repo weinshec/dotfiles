@@ -1,0 +1,19 @@
+- defaults:
+    link:
+      relink: true
+      create: true
+
+- clean: ['~']
+
+- link:
+    ~/.xinitrc: X/.xinitrc
+    ~/.i3: i3/.i3
+
+    ~/.config/alacritty: alacritty/.config/alacritty
+    ~/.config/dunst: dunst/.config/dunst
+    ~/.config/gtk-3.0: gtk/.config/gtk-3.0
+    ~/.config/picom: picom/.config/picom
+    ~/.config/polybar/config: polybar/.config/polybar/config
+    ~/.config/rofi: rofi/.config/rofi
+    ~/.config/termite: termite/.config/termite
+    ~/.config/zathura: zathura/.config/zathura

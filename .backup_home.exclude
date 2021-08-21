@@ -1,8 +1,0 @@
-PlayOnLinux\'s\ virtual\ drives
-.PlayOnLinux
-.cache
-.docker
-.dbus
-workspace/projects/bcp2021/worktrees/
-workspace/projects/bcp2021/artifacts/
-weinshec/.local/share/Steam
