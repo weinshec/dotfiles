@@ -4,21 +4,42 @@
   ff = only
 [push]
   default = simple
-[diff]
-  tool = vimdiff
-  colorMoved = default
-[difftool]
-  prompt = false
-  trustExitCode = true
-[difftool "vimdiff"]
-  cmd = nvim -d $LOCAL $REMOTE
+
+[pager]
+    diff = delta
+    log = delta
+    reflog = delta
+    show = delta
+[interactive]
+    diffFilter = delta --color-only --features=interactive
+
+[delta]
+    features = decorations
+
+[delta "interactive"]
+    keep-plus-minus-markers = false
+
+[delta "decorations"]
+    commit-decoration-style = blue ol
+    commit-style = raw
+    file-style = omit
+    hunk-header-decoration-style = blue box
+    hunk-header-file-style = red
+    hunk-header-line-number-style = "#067a00"
+    hunk-header-style = file line-number syntax
+    plus-style = "syntax #012800"
+    minus-style = "syntax #340001"
+    syntax-theme = Monokai Extended
+    navigate = true
+    side-by-side = true
+
 [alias]
   b = branch
   br = branch --remote
   co = checkout
   cc = commit
   ca = commit --amend
-  d = difftool
+  d = diff
   lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)[%G?] <%an>%Creset' --abbrev-commit
   s = status
 [gui]

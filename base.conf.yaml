@@ -27,6 +27,8 @@
 
     ~/.config/rua: rua/.config/rua
 
+    ~/.config/starship.toml: starship/.config/starship.toml
+
 - shell:
   - 
     description: Install tmux plugin manager

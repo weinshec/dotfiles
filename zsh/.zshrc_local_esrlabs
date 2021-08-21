@@ -1,0 +1,69 @@
+#
+# diab license file
+#
+export LM_LICENSE_FILE=$HOME/.licenses/zwrsLicense.lic
+
+#
+# ledger timetracking
+#
+export TIMELOG=$HOME/.esrlabs.timeclock
+
+alias ttoday='ledger -f $TIMELOG balance --period "today"'
+alias tweek='ledger -f $TIMELOG balance --period "this week"'
+alias tedit='vim $TIMELOG +'
+
+tperiod() {
+  start=$(date "+%Y-%m-01")
+  end=$(date "+%Y-%m-16")
+  if [ `date "+%d"` -gt 15 ]; then
+    start=$(date "+%Y-%m-16")
+    end=$(date -d "$(date +%Y-%m-01) + 1 month" +%Y-%m-%d)
+  fi
+  ledger -f $TIMELOG balance --period "from $start to $end"
+}
+
+myte() {
+  start=$(date "+%Y-%m-01")
+  end=$(date "+%Y-%m-15")
+  if [ `date "+%d"` -gt 15 ]; then
+    start=$(date "+%Y-%m-16")
+    end=$(date -d "$(date +%Y-%m-01) -1 day + 1 month" +%Y-%m-%d)
+  fi
+  ledger -f $TIMELOG register -D --period "from $start to $end"
+}
+
+
+#
+# project environment
+#
+penv() {
+    if [ $# -eq 0 ]; then
+      PROJECT=`basename ${PWD}`
+    elif [ $# -eq 1 ]; then
+      PROJECT=$1
+    else
+      echo "Syntax:  penv [name]"
+      return -1
+    fi
+
+    if [ ! -d ${WORKSPACE}/projects/$PROJECT ]; then
+      echo "Not a project: $PROJECT"
+      return -1
+    fi
+
+    export PENV_PROJECT=$PROJECT
+    export PENV_PROJECT_ROOT=$WORKSPACE/projects/$PROJECT
+
+    export PATH=/opt/llvm100/bin:$PATH
+
+    alias cdw='cd $PENV_PROJECT_ROOT'
+
+    source $HOME/.rvm/scripts/rvm
+    rvm use 2.5.1
+
+    if [ -f ${PENV_PROJECT_ROOT}/setEnv.sh ]; then
+      source ${PENV_PROJECT_ROOT}/setEnv.sh
+    fi
+}
+
+

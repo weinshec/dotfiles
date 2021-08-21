@@ -5,4 +5,5 @@
 - clean: ['~']
 
 - link:
+    ~/.zshrc_local: zsh/.zshrc_local_esrlabs
     ~/.gitconfig_local: git/.gitconfig_local.esrlabs

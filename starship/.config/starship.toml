@@ -1,0 +1,20 @@
+[env_var.PENV_PROJECT]
+format   = "penv [$env_value](bold blue) "
+
+[env_var.RANGER_LEVEL]
+format   = "|RANGER_[$env_value](bold white)| "
+
+[git_status]
+disabled = true
+
+[python]
+version_format = "${raw}"
+symbol = "py"
+
+[ruby]
+version_format = "${raw}"
+symbol = "rb"
+
+[rust]
+version_format = "${raw}"
+symbol = "rs"

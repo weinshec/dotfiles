@@ -26,9 +26,7 @@ echo ""
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export BROWSER=firefox
 export WORKSPACE=$HOME/workspace
-export LM_LICENSE_FILE=$HOME/.licenses/zwrsLicense.lic
 export PANEL_FIFO="/tmp/panel-fifo"
-export TIMELOG=$HOME/.esrlabs.timeclock
 export MANPAGER='nvim +Man!'
 
 if [ -f /usr/bin/nvim ]; then
@@ -54,11 +52,9 @@ alias cds='cd ~/scratch'
 alias cdw='cd ~/workspace'
 alias cdp='cd ~/workspace/projects'
 alias cat='bat'
+alias ip='ip -c'
 alias vim='nvim'
 
-alias ttoday='ledger -f $TIMELOG balance --period "today"'
-alias tweek='ledger -f $TIMELOG balance --period "this week"'
-alias tedit='vim $TIMELOG +'
 
 #
 # FZF CONFIG
@@ -85,40 +81,6 @@ fi
 if [ -e $HOME/.cargo/env ]; then
   source $HOME/.cargo/env
 fi
-
-
-#
-# PROJECT ENV
-#
-penv() {
-    if [ $# -eq 0 ]; then
-      PROJECT=`basename ${PWD}`
-    elif [ $# -eq 1 ]; then
-      PROJECT=$1
-    else
-      echo "Syntax:  penv [name]"
-      return -1
-    fi
-
-    if [ ! -d ${WORKSPACE}/projects/$PROJECT ]; then
-      echo "Not a project: $PROJECT"
-      return -1
-    fi
-
-    export PENV_PROJECT=$PROJECT
-    export PENV_PROJECT_ROOT=$WORKSPACE/projects/$PROJECT
-
-    export PATH=/opt/llvm100/bin:$PATH
-
-    alias cdw='cd $PENV_PROJECT_ROOT'
-
-    source $HOME/.rvm/scripts/rvm
-    rvm use 2.5.1
-
-    if [ -f ${PENV_PROJECT_ROOT}/setEnv.sh ]; then
-      source ${PENV_PROJECT_ROOT}/setEnv.sh
-    fi
-}
 
 
 #
@@ -179,6 +141,10 @@ zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
 bindkey "^P" up-line-or-beginning-search
 bindkey "^N" down-line-or-beginning-search
+
+if [ -f ~/.zshrc_local ]; then
+    source ~/.zshrc_local
+fi
 
 #
 # STARSHIP prompt
