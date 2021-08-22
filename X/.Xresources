@@ -1,0 +1,3 @@
+# Fixed values to disable alacritty auto-scaling
+Xcursor.size: 16
+Xft.dpi: 96

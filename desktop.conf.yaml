@@ -7,6 +7,7 @@
 
 - link:
     ~/.xinitrc: X/.xinitrc
+    ~/.Xresources: X/.Xresources
     ~/.i3: i3/.i3
 
     ~/.config/alacritty: alacritty/.config/alacritty
