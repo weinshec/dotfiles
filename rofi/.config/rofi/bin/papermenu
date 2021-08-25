@@ -18,5 +18,5 @@ open_pdf() {
 selected_pdf="$(find_pdfs 2>/dev/null | $rofi_command)"
 
 if [[ $? == "0" ]]; then
-  open_pdf $selected_pdf
+  open_pdf "$selected_pdf"
 fi
