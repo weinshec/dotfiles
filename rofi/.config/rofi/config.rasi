@@ -10,5 +10,5 @@ configuration {
     padding:            50;
     font:               "Hack 12";
     hide-scrollbar:     true;
-    theme:              "javacafe";
+    theme:              "nord";
 }
