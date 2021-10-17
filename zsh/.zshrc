@@ -27,13 +27,20 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 export BROWSER=firefox
 export WORKSPACE=$HOME/workspace
 export PANEL_FIFO="/tmp/panel-fifo"
-export MANPAGER='nvim +Man!'
 
 if [ -f /usr/bin/nvim ]; then
     export EDITOR=nvim
+    export MANPAGER='nvim +Man!'
+    alias vim='nvim'
 else
     export EDITOR=vim
 fi
+
+if type bat > /dev/null; then
+  export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+  alias cat='bat'
+fi
+
 
 #
 # ALIASES
@@ -51,9 +58,7 @@ fi
 alias cds='cd ~/scratch'
 alias cdw='cd ~/workspace'
 alias cdp='cd ~/workspace/projects'
-alias cat='bat'
 alias ip='ip -c'
-alias vim='nvim'
 
 
 #
