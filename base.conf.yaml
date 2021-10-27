@@ -21,6 +21,8 @@
 
     ~/.dir_colors: dir_colors/.dir_colors
 
+    ~/.config/htop: htop/.config/htop
+
     ~/.config/ranger: ranger
 
     ~/.config/systemd/user/scratch.service: systemd/.config/systemd/user/scratch.service
