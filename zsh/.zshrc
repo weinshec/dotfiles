@@ -24,7 +24,7 @@ echo ""
 # ENVIRONMENT VARIABLES
 #
 export PATH=$HOME/bin:/usr/local/bin:$PATH
-export BROWSER=firefox
+export BROWSER=librewolf
 export WORKSPACE=$HOME/workspace
 export PANEL_FIFO="/tmp/panel-fifo"
 
