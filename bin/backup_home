@@ -17,3 +17,5 @@ CMD="rsync $OPTIONS $HOME $1"
 
 echo $CMD
 $CMD
+
+notify-send "Backup process complete"
