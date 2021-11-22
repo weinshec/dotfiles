@@ -8,6 +8,6 @@ eraser="$device Pen eraser"
 
 xsetwacom --set "$stylus" Rotate half
 xsetwacom --set "$eraser" Rotate half
-xsetwacom --set "$stylus" MapToOutput 2560x1440+0+0
-xsetwacom --set "$eraser" MapToOutput 2560x1440+0+0
+xsetwacom --set "$stylus" MapToOutput 2560x1440+1920+0
+xsetwacom --set "$eraser" MapToOutput 2560x1440+1920+0
 
