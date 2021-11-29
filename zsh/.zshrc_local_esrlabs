@@ -4,6 +4,11 @@
 export LM_LICENSE_FILE=$HOME/.licenses/zwrsLicense.lic
 
 #
+# esr network licence
+#
+export ESRLABS_LICENSE_FILE=27000@flexnet-license-server.int.esrlabs.com
+
+#
 # ledger timetracking
 #
 export TIMELOG=$HOME/.esrlabs.timeclock
@@ -59,7 +64,7 @@ penv() {
     alias cdw='cd $PENV_PROJECT_ROOT'
 
     source $HOME/.rvm/scripts/rvm
-    rvm use 2.5.1
+    rvm use 2.7.0
 
     if [ -f ${PENV_PROJECT_ROOT}/setEnv.sh ]; then
       source ${PENV_PROJECT_ROOT}/setEnv.sh
