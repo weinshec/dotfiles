@@ -13,6 +13,7 @@
     ~/.config/alacritty: alacritty/.config/alacritty
     ~/.config/dunst: dunst/.config/dunst
     ~/.config/gtk-3.0: gtk/.config/gtk-3.0
+    ~/.librewolf/librewolf.overrides.cfg: librewolf/.librewolf/librewolf.overrides.cfg
     ~/.config/picom: picom/.config/picom
     ~/.config/polybar/config: polybar/.config/polybar/config
     ~/.config/rofi: rofi/.config/rofi
