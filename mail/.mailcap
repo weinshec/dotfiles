@@ -1,12 +1,13 @@
 text/html; $BROWSER -new-tab %s & sleep 5; nametemplate=%s.html; test=which $BROWSER
 text/html; lynx -display_charset %{charset} -dump %s; nametemplate=%s.html; copiousoutput
 
-text/*;    less
-
 application/pdf; zathura %s &
 
 application/vnd.openxmlformats-officedocument.presentationml.presentation; libreoffice %s &
 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet; libreoffice %s &
+
+text/calendar; mutt-ics; copiousoutput
+application/ics; mutt-ics; copiousoutput 
 
 image/jpeg; qview %s &
 image/jpeg; feh %s &
@@ -14,3 +15,5 @@ image/jpeg; eog %s &
 image/png; qview %s &
 image/png; feh %s &
 image/png; eog %s &
+
+text/*;    less

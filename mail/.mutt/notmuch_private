@@ -5,6 +5,7 @@ virtual-mailboxes " |--esrlabs"                        "notmuch://?query=folder:
 virtual-mailboxes " |--github"                         "notmuch://?query=folder:weinshec@holodeck2.de/INBOX/github"
 virtual-mailboxes " |--ingdiba"                        "notmuch://?query=folder:weinshec@holodeck2.de/INBOX/ingdiba"
 virtual-mailboxes " |--letsencrypt"                    "notmuch://?query=folder:weinshec@holodeck2.de/INBOX/letsencrypt"
+virtual-mailboxes " |--linkedin"                       "notmuch://?query=folder:weinshec@holodeck2.de/INBOX/linkedin"
 virtual-mailboxes " |--mastodon"                       "notmuch://?query=folder:weinshec@holodeck2.de/INBOX/mastodon"
 virtual-mailboxes " |--o2"                             "notmuch://?query=folder:weinshec@holodeck2.de/INBOX/o2"
 virtual-mailboxes " |--paypal"                         "notmuch://?query=folder:weinshec@holodeck2.de/INBOX/paypal"
