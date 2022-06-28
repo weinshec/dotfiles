@@ -1,0 +1,15 @@
+- defaults:
+    link:
+      relink: true
+      create: true
+
+- clean: ['~']
+
+- link:
+    ~/.xinitrc: X/.xinitrc
+    ~/.Xresources: X/.Xresources
+    ~/.i3: i3/.i3
+    ~/.config/picom: picom/.config/picom
+    ~/.config/polybar/config: polybar/.config/polybar/config
+    ~/.config/rofi: rofi/.config/rofi
+    ~/.config/dunst: dunst/.config/dunst
