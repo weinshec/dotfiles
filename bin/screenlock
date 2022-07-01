@@ -8,13 +8,13 @@ prelock() {
   if exists "playerctl"; then
     playerctl -a pause > /dev/null 2>&1
   fi
-  setxkbmap us
+  # setxkbmap us
   pkill -u "$USER" -USR1 dunst
 }
 
 postlock() {
   pkill -u "$USER" -USR2 dunst
-  setxkbmap us
+  # setxkbmap us
 }
 
 lock_i3() {

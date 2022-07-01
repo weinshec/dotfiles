@@ -48,9 +48,6 @@ bindsym XF86AudioPrev exec playerctl previous
 # Screenlock
 bindsym Control+Mod1+l exec $HOME/bin/screenlock
 
-# Toggle keybard layout
-bindsym $mod+x exec $HOME/bin/toggle_xkbmap
-
 # Ipython shell
 bindsym $mod+i exec alacritty -t floating-terminal -e ipython
 
@@ -244,7 +241,7 @@ smart_gaps inverse_outer
 
 exec_always --no-startup-id sleep 3; polybar_start
 exec_always --no-startup-id sleep 3; fehbg
-exec_always --no-startup-id setxkbmap us
+exec_always --no-startup-id setxkbmap -option grp:switch,grp:caps_toggle,grp_led:caps us,de
 
 exec --no-startup-id picom --config $HOME/.config/picom/picom.conf
 exec --no-startup-id autocutsel -fork &
