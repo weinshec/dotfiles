@@ -1,6 +1,6 @@
 [local]
 
-modules = timetracking eth wlan cpu temperature battery volume backlight xkeyboard
+modules = eth wlan cpu temperature battery volume backlight xkeyboard
 
-netif_eth = eth0
-netif_wlan = wlan0
+netif_eth = enp0s31f6
+netif_wlan = wlp4s0
