@@ -1,9 +1,0 @@
-- defaults:
-    link:
-      relink: true
-      create: true
-
-- clean: ['~']
-
-- link:
-    ~/.config/taskwarrior/taskrc_local: taskwarrior/taskrc_local_esrlabs

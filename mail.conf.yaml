@@ -20,3 +20,27 @@
     description: Enable mbsync systemd service
     command: systemctl --user enable mbsync.timer && systemctl --user start mbsync.timer
     stderr: true
+
+
+
+- defaults:
+    link:
+      if: '[ `hostname` = stargazer ]'
+      relink: true
+
+- link:
+    ~/.mbsyncrc: mail/.mbsyncrc_private
+
+    ~/.notmuch-config: mail/.notmuch-config_private
+    ~/mail/.notmuch/hooks/post-new: mail/mail/.notmuch/hooks/post-new_private
+
+    ~/.mutt/mailboxes: mail/.mutt/mailboxes_private
+    ~/.mutt/notmuch: mail/.mutt/notmuch_private
+    ~/.mutt/muttrc_local: mail/.mutt/muttrc_local_private
+
+    ~/.mutt/ch.weinsheimer@googlemail.com: mail/.mutt/ch.weinsheimer@googlemail.com
+    ~/.mutt/ch.weinsheimer@googlemail.com.signature: mail/.mutt/ch.weinsheimer@googlemail.com.signature
+
+    ~/.mutt/christoph.simone@googlemail.com: mail/.mutt/christoph.simone@googlemail.com
+
+    ~/.mutt/weinshec@holodeck2.de: mail/.mutt/weinshec@holodeck2.de

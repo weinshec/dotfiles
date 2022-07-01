@@ -21,8 +21,6 @@
 
     ~/.dir_colors: dir_colors/.dir_colors
 
-    ~/.config/htop: htop/.config/htop
-
     ~/.config/ranger: ranger
 
     ~/.config/systemd/user/scratch.service: systemd/.config/systemd/user/scratch.service
@@ -41,3 +39,13 @@
     description: Enable scratch systemd service
     command: systemctl --user enable scratch.service && systemctl --user start scratch.service
     stderr: true
+
+
+
+- defaults:
+    link:
+      if: '[ `hostname` = stargazer ]'
+      relink: true
+
+- link:
+    ~/.gitconfig_local: git/.gitconfig_local.private

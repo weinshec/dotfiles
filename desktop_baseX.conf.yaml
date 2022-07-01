@@ -13,3 +13,19 @@
     ~/.config/polybar/config: polybar/.config/polybar/config
     ~/.config/rofi: rofi/.config/rofi
     ~/.config/dunst: dunst/.config/dunst
+
+- defaults:
+    link:
+      if: '[ `hostname` = stargazer ]'
+      relink: true
+
+- link:
+    ~/.config/polybar/config_local: polybar/.config/polybar/config_local_private_stargazer
+
+- defaults:
+    link:
+      if: '[ `hostname` = defiant ]'
+      relink: true
+
+- link:
+    ~/.config/polybar/config_local: polybar/.config/polybar/config_local_private_defiant
