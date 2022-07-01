@@ -1,0 +1,22 @@
+#!/bin/sh
+
+wofi_command="wofi -p MANUALS -dmenu -i"
+
+root=$HOME/library/manuals
+
+find_pdfs() {
+  cd "${root}" || exit
+  shopt -s globstar
+  list=(**/*.pdf)
+  printf '%s\n' "${list[@]%}" | sort -n
+}
+
+open_pdf() {
+  zathura "${root}/$1"
+}
+
+selected_pdf="$(find_pdfs 2>/dev/null | $wofi_command)"
+
+if [[ $? == "0" ]]; then
+  open_pdf "$selected_pdf"
+fi

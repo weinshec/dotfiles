@@ -65,6 +65,7 @@ gaps outer 0
 
 # Removes the title bar of each window.
 default_border pixel 3
+default_floating_border pixel 3
 ### }}}
 
 ### Window rules {{{
@@ -88,6 +89,9 @@ for_window [title="^pdfpc*" window_role="presenter" ] move to output left, fulls
 
     # Start your launcher
     bindsym $mod+Tab exec wofi --show drun | xargs swaymsg exec --
+    bindsym $mod+p exec "$HOME/.config/wofi/bin/passmenu"
+    bindsym $mod+m exec "$HOME/.config/wofi/bin/papermenu"
+    bindsym $mod+t exec "$HOME/.config/wofi/bin/tmuxmenu"
 
     # Lock screen
     bindsym Control+Mod1+l exec swaylock
@@ -112,7 +116,7 @@ for_window [title="^pdfpc*" window_role="presenter" ] move to output left, fulls
     bindsym $mod+n exec $term -e ranger
 
     # Screenshot
-    bindsym $mod+Print exec grim -g "$(slurp)" - | swappy -f -
+    bindsym $mod+Shift+p exec grim -g "$(slurp)" - | swappy -f -
 
 #
 # Moving around:

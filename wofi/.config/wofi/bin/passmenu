@@ -1,0 +1,19 @@
+#!/bin/bash
+
+wofi_command="wofi -p pass"
+
+root=$HOME/.password-store
+
+list_passwords() {
+	cd "${root}" || exit
+	pw_list=(**/*.gpg)
+	printf '%s\n' "${pw_list[@]%.gpg}" | sort -n
+}
+
+clip_password() {
+  pass -c $1
+  notify-send $1
+}
+
+selected_password="$(list_passwords 2>/dev/null | $wofi_command -dmenu)"
+clip_password $selected_password
