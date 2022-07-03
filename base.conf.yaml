@@ -49,3 +49,13 @@
 
 - link:
     ~/.gitconfig_local: git/.gitconfig_local.private
+
+
+
+- defaults:
+    link:
+      if: '[ `hostname` = phoenix ]'
+      relink: true
+
+- link:
+    ~/.gitconfig_local: git/.gitconfig_local.advastore

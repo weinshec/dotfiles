@@ -1,0 +1,6 @@
+[user]
+  email = c.weinsheimer@adva.store
+  name = Christoph Weinsheimer
+  signingkey = 40F3DC8FED4C0BFD7686376FB8EEA8C70733A02F
+[commit]
+  gpgsign = true
