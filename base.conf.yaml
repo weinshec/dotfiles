@@ -29,6 +29,8 @@
 
     ~/.config/starship.toml: starship/.config/starship.toml
 
+    ~/.config/ripgrep: ripgrep/.config/ripgrep
+
 - shell:
   - 
     description: Install tmux plugin manager

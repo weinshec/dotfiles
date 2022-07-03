@@ -41,6 +41,10 @@ if type bat > /dev/null; then
   alias cat='bat'
 fi
 
+if type rg > /dev/null; then
+  export RIPGREP_CONFIG_PATH=$HOME/.config/ripgrep/config
+fi
+
 
 #
 # ALIASES
