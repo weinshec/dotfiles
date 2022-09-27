@@ -1,11 +1,9 @@
-PlayOnLinux\'s\ virtual\ drives
-.PlayOnLinux
-.cache
-.docker
-.dbus
-workspace/projects/bcp2021/worktrees/
-workspace/projects/bcp2021/artifacts/
-workspace/projects/hcp5/Docs/
-workspace/projects/hcp5/worktrees/
-weinshec/.local/share/Steam
-pweinshec/.local/share/Steam
+home/*/.cache
+home/*/.cargo
+home/*/.dbus
+home/*/.docker
+home/*/.java
+home/*/.local
+home/*/.rustup
+home/*/PlayOnLinux\'s\ virtual\ drives
+home/*/.PlayOnLinux
