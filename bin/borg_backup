@@ -8,7 +8,6 @@ fi
 
 # Setting this, so the repo does not need to be given on the commandline:
 # export BORG_REPO=ssh://username@example.com:2022/~/backup/main
-# TODO: Make this configurable
 export BORG_REPO="$1"
 
 # See the section "Passphrase notes" for more infos.
@@ -47,7 +46,6 @@ info "Pruning repository"
 
 borg prune                               \
     --list                               \
-    --glob-archives '{user}@{hostname}_' \   
     --show-rc                            \
     --keep-weekly   4                    \
     --keep-monthly  6                    \
