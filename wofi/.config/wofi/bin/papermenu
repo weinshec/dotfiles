@@ -1,6 +1,6 @@
 #!/bin/sh
 
-wofi_command="wofi -p MANUALS -dmenu -i"
+wofi_command="wofi -p MANUALS --dmenu -i"
 
 root=$HOME/library/manuals
 
@@ -12,7 +12,7 @@ find_pdfs() {
 }
 
 open_pdf() {
-  zathura "${root}/$1"
+  evince "${root}/$1"
 }
 
 selected_pdf="$(find_pdfs 2>/dev/null | $wofi_command)"

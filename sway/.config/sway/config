@@ -22,6 +22,17 @@ output * {
     # Default wallpaper
     background ~/.wallpaper fill
 }
+
+output eDP-1 {
+    mode 3840x2400
+    position 2560,0
+    scale 2
+}
+output "Ancor Communications Inc ASUS PB278 E9LMTF172568" {
+    mode 2560x1440
+    position 0,0
+}
+
 # Example configuration:
 #
 #   output HDMI-A-1 resolution 1920x1080 position 1920,0
@@ -40,6 +51,12 @@ input "type:keyboard" {
     xkb_options grp:caps_toggle
 }
 
+input "type:tablet_tool" {
+    # map_to_output "Dell Inc. Dell U4919DW GG4MXH3"
+    # map_to_output "Ancor Communications Inc ASUS PB278 E9LMTF172568" 
+    map_to_region 0 0 2560 1440
+}
+
 # Example configuration:
 #
 #   input "2:14:SynPS/2_Synaptics_TouchPad" {
@@ -55,7 +72,8 @@ input "type:keyboard" {
 # Synchronize primary and clipboard
 # exec wl-paste -t text --watch clipman store
 # exec wl-paste -p -t text --watch clipman store -P
-exec wl-paste -pw wl-copy
+exec --no-startup-id wl-paste -pw wl-copy
+exec --no-startup-id wl-paste --watch cliphist store
 ### }}}
 
 ### Style {{{
@@ -117,6 +135,9 @@ for_window [title="^pdfpc*" window_role="presenter" ] move to output left, fulls
 
     # Screenshot
     bindsym $mod+Shift+p exec grim -g "$(slurp)" - | swappy -f -
+
+    # Capture to Neorg Inbox
+    bindsym $mod+c exec $term -t floating-terminal -e nvim -c NeorgStart -c "Neorg gtd capture"
 
 #
 # Moving around:
