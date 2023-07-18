@@ -27,6 +27,7 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 export BROWSER=librewolf
 export WORKSPACE=$HOME/workspace
 export PANEL_FIFO="/tmp/panel-fifo"
+export GPG_TTY=$(tty)
 
 if [ -f /usr/bin/nvim ]; then
     export EDITOR=nvim
@@ -37,6 +38,7 @@ else
 fi
 
 if type bat > /dev/null; then
+  export MANROFFOPT="-c"
   export MANPAGER="sh -c 'col -bx | bat -l man -p'"
   alias cat='bat'
 fi
@@ -100,6 +102,8 @@ fi
 #
 if [ -e $HOME/.cargo/env ]; then
   source $HOME/.cargo/env
+elif [ -e $HOME/.cargo/bin/ ]; then
+  export PATH=$HOME/.cargo/bin:$PATH
 fi
 
 
