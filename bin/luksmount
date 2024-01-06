@@ -1,0 +1,18 @@
+#!/bin/sh
+
+set -e
+set -o pipefail
+
+if [ $# != 1 ]
+then
+    echo "Syntax:   luksmount <device>"
+    exit 1
+fi
+
+device=$(udisksctl unlock -b $1 \
+  | cut --delimiter=" " --fields=4 \
+  | sed 's/\.$//' \
+)
+
+udisksctl mount -b ${device}
+

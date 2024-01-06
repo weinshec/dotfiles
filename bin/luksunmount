@@ -1,0 +1,20 @@
+#!/bin/sh
+
+set -e
+set -o pipefail
+
+if [ $# != 1 ]
+then
+    echo "Syntax:   luksunmount <device>"
+    exit 1
+fi
+
+device=$(udisksctl info -b $1 \
+  | grep "IdUUID:" \
+  | cut --delimiter=":" --fields=2 \
+  | tr -d '[:space:]'
+)
+
+udisksctl unmount -b /dev/mapper/luks-${device}
+udisksctl lock -b $1
+
