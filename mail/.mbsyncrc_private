@@ -1,7 +1,7 @@
 # ----------------------------------------------------------------------------
 #                                                        weinshec@holodeck2.de
 IMAPAccount  holodeck2_weinshec
-Host         mail.holodeck2.de
+Host         imap.holodeck2.de
 Port         143
 User         weinshec@holodeck2.de
 PassCmd      "pass email/weinshec@holodeck2.de"
