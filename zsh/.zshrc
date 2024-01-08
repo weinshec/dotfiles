@@ -129,9 +129,9 @@ taskl () {
 # NNN
 #
 export GUI=1
-export NNN_BMS='w:~/workspace;s:~/scratch;m:/media'
+export NNN_BMS='w:~/workspace;s:~/scratch'
 export NNN_OPENER=~/.config/nnn/plugins/nuke
-export NNN_PLUG='t:preview-tui;v:imgviu'
+export NNN_PLUG='t:preview-tui'
 export TERMINAL='alacritty'
 export SPLIT="v"
 alias n='nnn -c -a -d'
