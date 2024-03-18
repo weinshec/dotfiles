@@ -131,7 +131,7 @@ for_window [title="^pdfpc*" window_role="presenter" ] move to output left, fulls
     bindsym $mod+i exec $term -t floating-terminal -e ipython
 
     # Filemanager
-    bindsym $mod+n exec $term -e nnn -c -a -d
+    bindsym $mod+n exec $term -e ranger
 
     # Screenshot
     bindsym $mod+Shift+p exec grim -g "$(slurp)" - | swappy -f -
