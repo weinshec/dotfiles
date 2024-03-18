@@ -164,3 +164,8 @@ bindkey jk vi-cmd-mode
 # STARSHIP prompt
 #
 eval "$(starship init zsh)"
+
+#
+# pipx path
+#
+export PATH="$PATH:$HOME/.local/bin"
