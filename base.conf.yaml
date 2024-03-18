@@ -31,6 +31,8 @@
 
     ~/.config/ripgrep: ripgrep/.config/ripgrep
 
+    ~/.config/zellij: zellij/.config/zellij
+
 - shell:
   - 
     description: Install tmux plugin manager
