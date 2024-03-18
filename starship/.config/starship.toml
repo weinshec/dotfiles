@@ -1,20 +1,135 @@
-[env_var.PENV_PROJECT]
-format   = "penv [$env_value](bold blue) "
+format = """
+$directory\
+$env_var\
+$git_branch\
+$git_commit\
+$git_state\
+$git_status\
+$git_metrics\
+$fill\
+$package\
+$meson\
+$lua\
+$python\
+$rust\
+$username\
+$hostname\
+$battery
+$sudo\
+$character
+"""
+
+right_format="$cmd_duration$status"
+add_newline = true
+palette = 'nordic'
+
+[fill]
+symbol = ' '
+
+[palettes.nordic]
+black = '##2E3440'
+blue = '#5E81AC'
+cyan = '#88C0D0'
+red = '#BF616A'
+orange = '#D08770'
+yellow = '#EBCB8B'
+magenta = '#B48EAD'
+purple = '#B48EAD'
+green='#A3BE8C'
+grey = '#60728A'
+white = '#D8DEE9'
+
+[username]
+format = "[$user]($style)"
+style_user = "bold grey"
+show_always = true
+
+[hostname]
+format = "[@$hostname]($style)"
+style = "bold grey"
+ssh_only = false
+
+[directory]
+format='[$path]($style) [$read_only]($read_only_style) '
+read_only = ''
+read_only_style ='red'
+truncation_length = 3
+truncate_to_repo = true
+
+[cmd_duration]
+disabled = false
+format=' [󰇂t=$duration]($style)'
+
+[status]
+disabled = false
+format = ' [rc=$status]($style)'
+
+[sudo]
+disabled = false
+symbol = ' '
+style = 'bold red'
+format = '[$symbol]($style)'
 
 [env_var.RANGER_LEVEL]
-format   = "|RANGER_[$env_value](bold white)| "
+format = "[ $env_value](bold white)"
+
+[git_branch]
+disabled = false
+format = '[$symbol$branch(:$remote_branch)]($style) '
+style = 'bold purple'
+
+[git_commit]
+disabled = false
+style = 'bold green'
+only_detached=true
+
+[git_state]
+disabled = false
 
 [git_status]
-disabled = true
+disabled = false
+
+[git_metrics]
+disabled = false
 
 [python]
-version_format = "${raw}"
-symbol = "py"
+disabled = false
+format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+style = 'yellow bold'
+symbol='󰌠 '
 
-[ruby]
-version_format = "${raw}"
-symbol = "rb"
+[lua]
+disabled = false
+format = '[$symbol($version )]($style)'
+symbol = '󰢱 '
 
 [rust]
-version_format = "${raw}"
-symbol = "rs"
+disabled = false
+format = '[$symbol($version )]($style)'
+style = 'orange'
+symbol='󱘗 '
+
+[meson]
+disabled = false
+
+[package]
+disabled = false
+format = '[$symbol$version]($style) '
+style = 'bold orange'
+symbol=' '
+
+[battery]
+format = '[$percentage $symbol]($style)'
+full_symbol = '󱊣'
+charging_symbol = '󰂄'
+discharging_symbol = '󰂌'
+empty_symbol = '󰂃'
+unknown_symbol = '󰂑'
+
+[[battery.display]]
+threshold = 15
+style = 'bold red'
+
+[[battery.display]]
+threshold = 30
+style = 'bold yellow'
