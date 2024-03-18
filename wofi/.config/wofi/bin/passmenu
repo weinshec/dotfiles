@@ -11,7 +11,7 @@ list_passwords() {
 }
 
 clip_password() {
-  pass -c $1
+  PASSWORD_STORE_X_SELECTION=primary pass -c $1
   notify-send $1
 }
 
