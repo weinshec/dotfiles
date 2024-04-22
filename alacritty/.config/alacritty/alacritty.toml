@@ -30,27 +30,27 @@ foreground = "0xD8DEE9"
 TERM = "xterm-256color"
 
 [font]
-size = 13
+size = 14
 
 [font.bold]
-family = "Hack Nerd Font"
+family = "FiraCode Nerd Font Mono"
 style = "Bold"
 
 [font.bold_italic]
-family = "Hack Nerd Font"
+family = "FiraCode Nerd Font Mono"
 style = "Bold Italic"
 
 [font.italic]
-family = "Hack Nerd Font"
+family = "FiraCode Nerd Font Mono"
 style = "Italic"
 
 [font.normal]
-family = "Hack Nerd Font"
+family = "FiraCode Nerd Font Mono"
 style = "Regular"
 
-[font.offset]
-x = 1
-y = 0
+# [font.offset]
+# x = 1
+# y = 0
 
 [selection]
 save_to_clipboard = true
