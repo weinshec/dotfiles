@@ -1,0 +1,16 @@
+#!/bin/bash
+
+wofi_command="wofi -p zellij --dmenu -i"
+
+list_sessions() {
+    session_list=`zellij list-sessions -s`
+    printf '%s\n' "${session_list[@]}" | sort -n
+}
+
+attach_session() {
+    alacritty -e zellij attach $1
+}
+
+selected_session="$(list_sessions 2> /dev/null | $wofi_command)"
+
+attach_session $selected_session

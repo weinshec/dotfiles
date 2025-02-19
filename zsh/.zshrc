@@ -30,9 +30,9 @@ export PANEL_FIFO="/tmp/panel-fifo"
 export GPG_TTY=$(tty)
 
 if [ -f /usr/bin/nvim ]; then
-    export EDITOR=nvim
-    export MANPAGER='nvim +Man!'
-    alias vim='nvim'
+  export EDITOR=nvim
+  export MANPAGER='nvim +Man!'
+  alias vim='nvim'
 else
     export EDITOR=vim
 fi
@@ -46,6 +46,9 @@ fi
 if type rg > /dev/null; then
   export RIPGREP_CONFIG_PATH=$HOME/.config/ripgrep/config
 fi
+
+# GNU pass on wayland should use the primary clipboard
+# export PASSWORD_STORE_X_SELECTION=primary
 
 
 #
@@ -155,7 +158,7 @@ bindkey "^P" up-line-or-beginning-search
 bindkey "^N" down-line-or-beginning-search
 
 if [ -f ~/.zshrc_local ]; then
-    source ~/.zshrc_local
+  source ~/.zshrc_local
 fi
 
 bindkey jk vi-cmd-mode
@@ -169,3 +172,13 @@ eval "$(starship init zsh)"
 # pipx path
 #
 export PATH="$PATH:$HOME/.local/bin"
+
+#
+# zellij
+#
+if type zellij > /dev/null; then
+  function zr () { zellij run --name "$*" -- zsh -ic "$*";}
+  function zrf () { zellij run --name "$*" --floating -- zsh -ic "$*";}
+  function ze () { zellij edit "$*";}
+  function zef () { zellij edit --floating "$*";}
+fi

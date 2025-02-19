@@ -25,12 +25,17 @@ output * {
 
 output eDP-1 {
     mode 3840x2400
-    position 2560,0
+    position 4000,840
     scale 2
 }
 output "Ancor Communications Inc ASUS PB278 E9LMTF172568" {
     mode 2560x1440
+    position 1440,700
+}
+output "HP Inc. HP E273q 6CM9120D6Y" {
+    mode 2560x1440
     position 0,0
+    transform 270
 }
 
 # Example configuration:
@@ -54,7 +59,7 @@ input "type:keyboard" {
 input "type:tablet_tool" {
     # map_to_output "Dell Inc. Dell U4919DW GG4MXH3"
     # map_to_output "Ancor Communications Inc ASUS PB278 E9LMTF172568" 
-    map_to_region 0 0 2560 1440
+    map_to_region 1440 700 2560 1440
 }
 
 # Example configuration:
@@ -109,7 +114,8 @@ for_window [title="^pdfpc*" window_role="presenter" ] move to output left, fulls
     bindsym $mod+Tab exec wofi --show drun | xargs swaymsg exec --
     bindsym $mod+p exec "$HOME/.config/wofi/bin/passmenu"
     bindsym $mod+m exec "$HOME/.config/wofi/bin/papermenu"
-    bindsym $mod+t exec "$HOME/.config/wofi/bin/tmuxmenu"
+    # bindsym $mod+t exec "$HOME/.config/wofi/bin/tmuxmenu"
+    bindsym $mod+t exec "$HOME/.config/wofi/bin/zellijmenu"
 
     # Lock screen
     bindsym Control+Mod1+l exec swaylock

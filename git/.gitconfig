@@ -36,6 +36,7 @@
 [alias]
   b = branch
   br = branch --remote
+  bl = "!git branch --format '%(refname:short) %(upstream:short)' | awk '{if (!$2) print $1;}'"
   co = checkout
   cc = commit
   ca = commit --amend
@@ -56,3 +57,5 @@
 	cmd = nvim -f -c \"Gvdiffsplit!\" \"$MERGED\"
 [merge]
 	tool = fugitive
+[tag]
+	sort = version:refname
